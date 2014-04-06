@@ -99,8 +99,10 @@ INSERT INTO Stores VALUES
     (202, 3),
     (204, 1);
 
-	
-
+--Searches for the names of ingredients in the posts and returns the post id. Replace tomato with php var.
+SELECT pid, name 
+FROM Ingredient, Stores 
+WHERE name = ‘tomato’;
 	
 --Counts number of ingredients for all posts, only shows those with 2 ingredients
 --to search a number put in by a user: use php, put below SQL query in a String, concatenate, use php var in place of '2'
