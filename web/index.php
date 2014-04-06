@@ -2,7 +2,31 @@
 
 <html><head><title>PHP Test</title></head>
 <body>
-<?php print( "Hello World<br />"); ?>
+<?php print( "Hello World<br />"); 
+
+#let's access some databases.  username=js7 password=MealAdminOfDoom123
+
+	$conn = pg_connect('user=js7 host=postgres dbname=meal password=MealAdminOfDoom123');
+  	
+  	if(!$conn){
+  		echo "Connection failed";
+  	}
+  	
+  	$query = sprintf("SELECT * FROM Users");
+  	$result = pg_query($conn, $query);
+  	
+  	if(!$result){
+  		echo "An error occured.\n";
+  		exit;
+  	}
+  	
+  	$arr = pg_fetch_array($result, 0, PGSQL_NUM);
+  	echo $arr[0] . " <- array\n";
+  	
+  	$arr = pg_fetch_array($result, 1, PGSQL_ASSOC);
+  	echo $arr["mycolumn"] . " <- array\n";
+
+?>
 </body></html>
 
 
