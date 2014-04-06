@@ -12,7 +12,7 @@
   		echo "Connection failed";
   	}
   	
-  	$query = sprintf("SELECT * FROM Users");
+  	$query = sprintf("SELECT username FROM Users WHERE uid = 15");
   	$result = pg_query($conn, $query);
   	
   	if(!$result){
@@ -20,11 +20,9 @@
   		exit;
   	}
   	
-  	$arr = pg_fetch_array($result, 0, PGSQL_NUM);
-  	echo $arr[0] . " <- array\n";
+  	$arr = pg_fetch_row($result);
+  	echo $arr[0];
   	
-  	$arr = pg_fetch_array($result, 1, PGSQL_ASSOC);
-  	echo $arr["mycolumn"] . " <- array\n";
 
 ?>
 </body></html>
