@@ -1,4 +1,14 @@
 #!/usr/local/bin/php
+
+<html><head><title>PHP Test</title></head>
+<body>
+<?php print( "Hello World<br />"); ?>
+</body></html>
+
+
+
+<!--commenting out entire file for simplicity
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,13 +16,13 @@
 </head>
 
 <body>  
-<!-- Header and Nav -->
+<!-- Header and Nav 
   
   <div class="row">
     <div class="large-3 columns">
       <h1> 
 	  logo goes here
-	  <!-- <img src="http://placehold.it/400x100&text=Logo" />-->
+	  <!-- <img src="http://placehold.it/400x100&text=Logo" />
 	  </h1>
     </div>
     <div class="large-9 columns">
@@ -25,10 +35,10 @@
     </div>
   </div>
   
-  <!-- End Header and Nav -->
+  <!-- End Header and Nav 
   
   
-  <!-- PHP Code for Accessing Database -->
+  <!-- PHP Code for Accessing Database 
   
   <?php
   	$conn = pg_connet('user=js7 host=postgres dbname=meal password=MealAdminOfDoom123');
@@ -55,8 +65,8 @@
   
   <div class="row">    
     
-    <!-- Main Content Section -->
-    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+    <!-- Main Content Section
+    <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens 
     <div class="large-9 push-3 columns">
       
       <h3>Today's Meal <small>"wow food"</small></h3>
@@ -66,8 +76,8 @@
     </div>
     
     
-    <!-- Nav Sidebar -->
-    <!-- This is source ordered to be pulled to the left on larger screens -->
+    <!-- Nav Sidebar
+    <!-- This is source ordered to be pulled to the left on larger screens 
     <div class="large-3 pull-9 columns">
         
       <ul class="side-nav">
@@ -81,7 +91,7 @@
       
       <p>
 	  sidebar pic idek
-	  <!--<img src="http://placehold.it/320x240&text=Ad" />-->
+	  <!--<img src="http://placehold.it/320x240&text=Ad" />
 	  </p>
         
     </div>
@@ -89,7 +99,7 @@
   </div>
     
   
-  <!-- Footer -->
+  <!-- Footer 
   
   <footer class="row">
     <div class="large-12 columns">
@@ -112,3 +122,5 @@
 </body>  
 
 </html>
+
+-->
