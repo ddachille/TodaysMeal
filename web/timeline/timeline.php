@@ -9,7 +9,7 @@
         <h1 id="timeline">Timeline 2.1</h1>
     </div>
     <ul class="timeline">
-        <!--
+        
         <li>
           <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="11 hours ago via Twitter" id=""></i></a></div>
           <div class="timeline-panel">
@@ -18,8 +18,32 @@
               
             </div>
             <div class="timeline-body">
-              <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-              
+            	<?php 
+					#let's access some databases.  username=js7 password=MealAdminOfDoom123
+					$conn = pg_connect('user=js7 host=postgres dbname=meal password=MealAdminOfDoom123');
+  	
+  					if(!$conn){
+  						echo "Connection failed";
+  					}
+  	
+  					$query = sprintf("WITH Userposts AS(
+										SELECT Users.uid, pid
+										FROM (Users JOIN MakePost ON (Users.uid = MakePost.uid))
+										WHERE Users.uid = 15)
+										SELECT Userposts.uid, Userposts.pid, active, date, caption, recipe
+										FROM (Userposts JOIN Post ON (Userposts.pid = Post.pid))");
+  					$result = pg_query($conn, $query);
+  	
+  					if(!$result){
+  						echo "An error occured.\n";
+  						exit;
+  					}
+  	
+  					$arr = pg_fetch_row($result);
+  					echo $arr[0];
+  	
+
+				?>
             </div>
             
             <div class="timeline-footer">
@@ -28,7 +52,7 @@
                 <a class="pull-right">Continuar Lendo</a>
             </div>
           </div>
-        </li> -->
+        </li>
         
         <li  class="timeline-inverted">
           <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record invert" rel="tooltip" title="11 hours ago via Twitter" id=""></i></a></div>
