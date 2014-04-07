@@ -40,13 +40,15 @@
   						echo "An error occured.\n";
   						exit;
   					}
+  					
+  					$arr = pg_fetch_row($result);
   					echo $arr[0];
   					echo $arr[1];
   					echo $arr[2]; 
   					echo $arr[3];
   					echo $arr[4];
   					
-  					$arr = pg_fetch_row($result);
+  					
   				#	$query2 = sprintf("SELECT username FROM Users WHERE uid = " . $arg[0]);
  				# 	$result2 = pg_query($conn, $query2);
  				# 	$arr2 = pg_fetch_row($result2);
