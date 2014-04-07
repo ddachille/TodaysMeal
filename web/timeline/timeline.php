@@ -19,29 +19,35 @@
             </div>
             <div class="timeline-body">
             	<?php 
+
 					#let's access some databases.  username=js7 password=MealAdminOfDoom123
+
 					$conn = pg_connect('user=js7 host=postgres dbname=meal password=MealAdminOfDoom123');
   	
-  					if(!$conn){
+					if(!$conn){
   						echo "Connection failed";
-  					}
+					}
   	
   					$query = sprintf("WITH Userposts AS(
-										SELECT Users.uid, pid
-										FROM (Users JOIN MakePost ON (Users.uid = MakePost.uid))
-										WHERE Users.uid = 15)
-										SELECT Userposts.uid, Userposts.pid, active, date, caption, recipe
-										FROM (Userposts JOIN Post ON (Userposts.pid = Post.pid))");
-  					$result = pg_query($conn, $query);
+					SELECT Users.uid, pid
+					FROM (Users JOIN MakePost ON (Users.uid = MakePost.uid))
+					WHERE Users.uid = 15)
+					SELECT Userposts.uid, Userposts.pid, active, date, caption, recipe
+					FROM (Userposts JOIN Post ON (Userposts.pid = Post.pid));");
+					$result = pg_query($conn, $query);
   	
-  					if(!$result){
+					if(!$result){
   						echo "An error occured.\n";
   						exit;
   					}
   	
   					$arr = pg_fetch_row($result);
-  					echo $arr[0];
-  	
+  					$query2 = sprintf("SELECT username FROM Users WHERE uid = " . $arg[0]);
+ 				 	$result2 = pg_query($conn, $query2);
+ 				 	$arr2 = pg_fetch_row($result2);
+ 				 	echo "Username: " . $arr2[0];
+ 				 	echo $arr[4];
+ 		 	
 
 				?>
             </div>
