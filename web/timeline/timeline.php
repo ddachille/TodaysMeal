@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="page-header text-center">
-        <h1 id="timeline">Timeline 2.1</h1>
+        <h1 id="timeline">Today's Meal</h1>
     </div>
     <ul class="timeline">
         
@@ -49,7 +49,7 @@
   					echo $arr[4];
   					
   					
-  				#	$query2 = sprintf("SELECT username FROM Users WHERE uid = " . $arg[0]);
+  				#	$query2 = sprintf("SELECT username FROM Users WHERE uid = 17" . $arg[0]);
  				# 	$result2 = pg_query($conn, $query2);
  				# 	$arr2 = pg_fetch_row($result2);
  				# 	echo "Username: " . $arr2[0];
