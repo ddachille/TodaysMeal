@@ -88,7 +88,7 @@
   	echo $arr["mycolumn"] . " <- array\n";
   ?>
   
-  
+ 
   <div class="row">    
     
     <!-- Main Content Section
