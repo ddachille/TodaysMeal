@@ -1,8 +1,25 @@
 #!/usr/local/bin/php
 
-<html><head><title>PHP Test</title></head>
+<html>
+	<head><title>PHP Test</title></head>
 <body>
-<?php print( "Hello World<br />"); 
+
+ 
+<form name="index" action="index.php" method="POST" >  
+Username:<input type="text" name="username" />  
+Password:<input type="text" name="hashedpw" />     
+<input type="submit" />  
+</form>  
+
+
+<?php  
+$db = pg_connect("host=postgres dbname=meal user= js7 password=MealAdminOfDoom123");  
+$query = "INSERT INTO Users VALUES(20, '$_POST[username]',TRUE ,'$_POST[hashedpw]')";
+$result = pg_query($db,$query);
+?>  
+
+<?php 
+	print( "Hello World<br />"); 
 
 #let's access some databases.  username=js7 password=MealAdminOfDoom123
 
@@ -21,11 +38,11 @@
   	}
   	
   	$arr = pg_fetch_row($result);
-  	$query2 = sprintf("SELECT username FROM Users WHERE uid = " . $arg[0]);
+  	$query2 = sprintf("SELECT username FROM Users WHERE uid = 17");
   	$result2 = pg_query($conn, $query2);
   	$arr2 = pg_fetch_row($result2);
   	echo "Username: " . $arr2[0];
-  	echo $arr[4];
+ 
   	
 
 ?>
@@ -64,10 +81,11 @@
   <!-- End Header and Nav 
   
   
-  <!-- PHP Code for Accessing Database 
+  <!-- PHP Code for Accessing Database
+
   
   <?php
-  	$conn = pg_connet('user=js7 host=postgres dbname=meal password=MealAdminOfDoom123');
+  	$conn = pg_connect('user=js7 host=postgres dbname=meal password=MealAdminOfDoom123');
   	
   	if(!$conn){
   		echo "Connection failed";
@@ -88,7 +106,7 @@
   	echo $arr["mycolumn"] . " <- array\n";
   ?>
   
- 
+
   <div class="row">    
     
     <!-- Main Content Section
