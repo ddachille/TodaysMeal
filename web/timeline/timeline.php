@@ -95,7 +95,7 @@
 				exit;
 			}
         	
-        	//make a boolean to track whether the post will be on the left or right
+        	//make a boolean to track whether the post will be on the left or right.
         	$inverted = true;
         	$count = 0;
         	for ($count=0; $count<$numOfRows; $count++){
