@@ -1,8 +1,7 @@
 #!/usr/local/bin/php
 
 <link href="css/bootstrap.css" rel="stylesheet">
-<link href="timelineCSS.css" rel="stylesheet">
-	
+<link href="timelineCSS.css" rel="stylesheet">	
 
 <div class="container">
     <div class="page-header text-center">
