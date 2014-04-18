@@ -29,6 +29,7 @@
 			
 			$usernameExists = pg_fetch_result($result, 0, "exists");
 			
+			
 			if($usernameExists == "t"){
 				$query = sprintf("SELECT uid FROM Users WHERE username = '".$username."';");
 				$result = pg_query($conn, $query);
@@ -40,7 +41,22 @@
 			
 				$temp = pg_fetch_row($result, 0);
 				$uid = $temp[0];
-				echo "<h1 id=\"timeline\">".$username."</h1>";
+				//Then make the query
+				$query = sprintf("WITH Userposts AS(
+				SELECT Users.uid, pid
+				FROM (Users JOIN MakePost ON (Users.uid = MakePost.uid))
+				WHERE Users.uid = ".$uid.")
+				SELECT Userposts.uid, Userposts.pid, active, date, caption, recipe
+				FROM (Userposts JOIN Post ON (Userposts.pid = Post.pid))
+				WHERE active =true;");
+				$result = pg_query($conn, $query);
+				//Find the number of divs you will need to generate
+				$numOfRows = pg_num_rows ($result);
+				if($numOfRows > 0){
+					echo "<h1 id=\"timeline\">".$username."</h1>";
+				}else{
+					echo "<h1 id=\"timeline\">".$username." has no active posts.</h1>";
+				}
 			}else{
 				echo "<h1 id=\"timeline\">Error: Username \"".$username."\" does not exists</h1>";
 			}
@@ -111,13 +127,6 @@
 	        	//This PHP scrip makes a query for all uid=15 posts
 	        	//It then creates a div box for each post with a for loop
 	        	
-	        	//First connect to the database        	
-	        	$conn = pg_connect('user=js7 host=postgres dbname=meal password=MealAdminOfDoom123');
-	  	
-				if(!$conn){
-					echo "Connection failed";
-				}
-				
 				//Then make the query
 				$query = sprintf("WITH Userposts AS(
 				SELECT Users.uid, pid
@@ -172,6 +181,10 @@
 	        		$inverted = !$inverted; //flip which side the post will be on each time
 					
 	        	}
+	        	
+	        	if($numRows == 0){
+					echo "<h1 id=\"timeline\>".$username." does not have posts to display.</h1>";
+				}
 	        }
         ?>
         
