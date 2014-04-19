@@ -5,7 +5,9 @@ TODO:
 
 Image Posting (Storing and Viewing Images)
 
-Header Hyperlinks:
+Working sidebar
+
+Sidebar Hyperlinks:
 -Search (functions)
 	-Get all Ingredients from Post #id
 	-Get all Comments from Post #id
@@ -13,6 +15,9 @@ Header Hyperlinks:
 	-Search by Username
 	-Get all Posts where Num of Ing < #
 	-Get all Posts from Ing 'name'
+-Log out
+-Current logged in user's profile
+-settings?
 
 -My Page (active posts?)
 

@@ -2,7 +2,37 @@
 
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="timelineCSS.css" rel="stylesheet">
-	
+<link href="css/simple-sidebar.css" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="#">Today's Meal</a>
+                </li>
+                <li><a href="indextimeline.php">Dashboard</a>
+                </li>
+                <li><a href="#">My Timeline</a>
+                </li>
+                <li><a href="#">Search</a>
+                </li>
+                <li><a href="#">Logout</a>
+                </li>
+                <li><a href="#">&nbsp;</a>
+                </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id dui vitae libero semper placerat id et mauris. Sed fermentum lorem eu fermentum semper. Pellentesque blandit, lorem at consequat rutrum, magna arcu consectetur massa, at tempor magna purus ut sem. Aliquam sodales laoreet massa nec semper. 
+                </li>
+                <li><a href="#"></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            <!-- Keep all page content within the page-content inset div! -->
+            <div class="page-content inset">	
 
 <div class="container">
     <div class="page-header text-center">
@@ -40,7 +70,7 @@
 			
 				$temp = pg_fetch_row($result, 0);
 				$uid = $temp[0];
-				echo "<h1 id=\"timeline\">".$username."</h1>";
+				echo "<div align=\"right\"><h1 id=\"timeline\">Timeline of ".$username."&emsp;&emsp;&emsp;&emsp;&emsp;</h1></div>";
 			}else{
 				echo "<h1 id=\"timeline\">Error: Username \"".$username."\" does not exists</h1>";
 			}
@@ -180,5 +210,19 @@
     </ul>
 </div>
 
+			</div>
+        </div>
+
+</div>
+
 <script src="js/bootstrap.min.js"></script>
 <script src="timelineJS.js"></script>
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/bootstrap.js"></script>
+    <!-- Custom JavaScript for the Menu Toggle -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+</script>
