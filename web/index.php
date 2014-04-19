@@ -1,22 +1,17 @@
 #!/usr/local/bin/php
 
 <html>
-	<head><title>PHP Test</title></head>
+	<head><title>Register</title></head>
 <body>
 
  
-<form name="index" action="index.php" method="POST" >  
-Username:<input type="text" name="username" />  
-Password:<input type="text" name="hashedpw" />     
+<form name="index" action="registration.php" method="POST" >  
+Username:<input type="text" name="username" /></br>  
+Password:<input type="text" name="hashedpw" /></br>
+Set Profile to Private? (true or false): <input type="text" name= "isPrivate" /></br>     
 <input type="submit" />  
 </form>  
 
-
-<?php  
-$db = pg_connect("host=postgres dbname=meal user= js7 password=MealAdminOfDoom123");  
-$query = "INSERT INTO Users VALUES(20, '$_POST[username]',TRUE ,'$_POST[hashedpw]')";
-$result = pg_query($db,$query);
-?>  
 
 <?php 
 	print( "Hello World<br />"); 
