@@ -1,7 +1,7 @@
 #!/usr/local/bin/php
 
 <html>
-	<head><title>Registering...</title></head>
+	<head><title>Registered!</title></head>
 <body>
 
 <?php 
@@ -27,3 +27,10 @@
 	}
 	
 ?>  
+
+<?php
+
+   header( 'Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php' ) ;
+
+?>
+</body>
