@@ -1,16 +1,11 @@
 #!/usr/local/bin/php
 
 <html>
-	<head><title>Register</title></head>
+	<head><title>Register or Log In</title></head>
 <body>
 
- 
-<form name="index" action="registration.php" method="POST" >  
-Username:<input type="text" name="username" /></br>  
-Password:<input type="password" name="hashedpw" /></br>     
-<input type="submit" />  
-</form>  
-
+ We should have this index page have an option to either register or log in.
+<a href= "register.php">REGISTER?</a>
 
 <?php 
 	print( "Hello World<br />"); 
