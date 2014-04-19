@@ -101,7 +101,7 @@
 						echo "<a class=\"pull-left\">".$date."</a>";
 	                	//echo "<a><i class=\"glyphicon glyphicon-thumbs-up\"></i></a>";
 	                	//echo "<a><i class=\"glyphicon glyphicon-share\"></i></a>";
-	                	echo "<a href=\"postPage.php?username=".$username."&pid=".$pid."\" class=\"pull-right\">View Post</a>";
+	                	echo "<a href=\"postPage.php?pid=".$pid."\" class=\"pull-right\">View Post</a>";
 	            	echo "</div>";
 	            	echo "</div>";
 	        		echo "</li>";
