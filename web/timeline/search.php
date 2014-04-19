@@ -74,21 +74,18 @@
       <form class="form-signin" role="form" action="timeline.php" method="get">
         <h2 class="form-signin-heading">Search by Username:</h2>
         <input type="text" class="form-control" placeholder="User Name" required autofocus name="username">
-       
         <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
       </form>
 
       <form class="form-signin" role="form" action="ingname_search.php" method="get">
         <h2 class="form-signin-heading">Search by Ingredient Name:</h2>
         <input type="text" class="form-control" placeholder="Name" required autofocus name="SearchNameIng">
-       
         <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
       </form>
 
       <form class="form-signin" role="form" action="ingnum_search.php" method="get">
         <h2 class="form-signin-heading">Search by Number of Ingredients:</h2>
         <input type="text" class="form-control" placeholder="Number" required autofocus name="SearchNumIng">
-       
         <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
       </form>
 
