@@ -56,7 +56,7 @@
 				//Then make the query
 				$ingname= $_GET['SearchNameIng'];
 				$ingname= ucwords("$ingname");
-				$query = sprintf("SELECT Users.uid, Stores.pid, active, date, caption, recipe, Users.username 
+				$query = sprintf("SELECT Users.uid, Stores.pid, active, date, caption, recipe, Users.username, imgpath 
 					FROM Ingredient, Stores, Users, Post, MakePost 
 					WHERE name = '$ingname' AND Ingredient.ingid=Stores.ingid AND Stores.pid=Post.pid AND Post.pid=MakePost.pid 
 					AND MakePost.uid=Users.uid;");				
@@ -79,6 +79,7 @@
 	        		$date = $currRow[3];
 					$pid = $currRow[1];
 					$username = $currRow[6];
+					$imgpath = $currRow[7];
 	        	
 	        		//for each row, create the list object and div class inside of it
 	        		if($inverted){ //if it's inverted, make sure to put this in the list
@@ -89,7 +90,7 @@
 	          		echo "<div class=\"timeline-badge primary\"><a><i class=\"glyphicon glyphicon-record\" rel=\"tooltip\" title=\"11 hours ago via Twitter\" id=\"\"></i></a></div>";
 	          		echo "<div class=\"timeline-panel\">";
 	            	echo "<div class=\"timeline-heading\">";
-	            	  
+	            		echo "<img class=\"img-responsive\" src=\"".$imgpath."\" />";
 	            	echo "</div>";
 	        		echo "<div class=\"timeline-body\">";
 						echo "<a href=http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=".$username."><b>&nbsp;&nbsp;".$username."</b></a>";
