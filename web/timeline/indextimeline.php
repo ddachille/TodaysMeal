@@ -21,9 +21,9 @@
         <?php 
 				//Then make the query
 				$query = sprintf("WITH Userposts AS(
-				SELECT Users.uid, pid
-				FROM (Users JOIN MakePost ON (Users.uid = MakePost.uid)))
-				SELECT Userposts.uid, Userposts.pid, active, date, caption, recipe
+					SELECT Users.uid, pid, Users.username
+					FROM (Users JOIN MakePost ON (Users.uid = MakePost.uid)))
+				SELECT Userposts.uid, Userposts.pid, active, date, caption, recipe, Userposts.username
 				FROM (Userposts JOIN Post ON (Userposts.pid = Post.pid))
 				WHERE active =true;");
 				$result = pg_query($conn, $query);
@@ -43,7 +43,8 @@
 	        		$caption = $currRow[4];
 	        		$isActive = $currRow[2];
 	        		$date = $currRow[3];
-				$pid = $currRow[1];
+					$pid = $currRow[1];
+					$username = $currRow[6];
 	        	
 	        		//for each row, create the list object and div class inside of it
 	        		if($inverted){ //if it's inverted, make sure to put this in the list
@@ -57,7 +58,7 @@
 	            	  
 	            	echo "</div>";
 	        		echo "<div class=\"timeline-body\">";
-						echo "<a href=http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=".$username."><b>".$username."</b></a>";
+						echo "<a href=http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=".$username."><b>&nbsp;&nbsp;".$username."</b></a>";
 	            		echo "<p> ".$caption."</p>"; 
 	           		echo "</div>";
 	            

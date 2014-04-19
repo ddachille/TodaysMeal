@@ -112,7 +112,7 @@ if($pidExists == "t"){
 					$arr2 = pg_fetch_row($result2);
 
 					echo "<i>&#34;".$arr[1]."&#34;</i>";
-  					echo " -- " . $arr[0] . "<br><br>";
+  					echo " -- " . "<a href=\"timeline.php?username=" . $username . "\">" . $arr[0] . "</a><br><br>";
 					echo "Ingredients: <br><small>";
 					for ($count=0; $count<$numOfIngred; $count++){
         			            	$currRow = pg_fetch_row($result2, $count);
@@ -124,7 +124,7 @@ if($pidExists == "t"){
             </div>     
             <div class="timeline-footer">
 		<?php
-                echo "<a href=\"timeline.php?username=".$username."\" class=\"pull-right\">Back to Timeline</a>";
+                echo "<a href=\"indextimeline.php\" class=\"pull-right\">Back to Timeline</a>";
 		?>
             </div>
           </div>

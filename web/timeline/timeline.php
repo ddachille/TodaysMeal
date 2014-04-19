@@ -157,7 +157,7 @@
 	            	  
 	            	echo "</div>";
 	        		echo "<div class=\"timeline-body\">";
-						echo "<a href=http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=".$username."><b>".$username."</b></a>";
+						echo "<a href=http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=".$username."><b>&nbsp;&nbsp;".$username."</b></a>";
 	            		echo "<p> ".$caption."</p>"; 
 	           		echo "</div>";
 	            
