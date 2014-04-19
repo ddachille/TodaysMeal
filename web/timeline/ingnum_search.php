@@ -55,8 +55,11 @@
         <?php 
 				//Then make the query
 				$ingnum= $_GET['SearchNumIng'];
-				$query = sprintf("SELECT Users.uid, Stores.pid, Users.username FROM Ingredient, Stores, Users, Post, MakePost						WHERE Ingredient.ingid=Stores.ingid AND Stores.pid=Post.pid AND Post.pid=MakePost.pid 
-					AND MakePost.uid=Users.uid GROUP BY Stores.pid, Users.uid HAVING COUNT(Stores.ingid) = $ingnum;");				
+				$query = sprintf("SELECT Users.uid, Stores.pid, active, date, caption, recipe, Users.username
+ 					FROM Ingredient, Stores, Users, Post, MakePost
+					WHERE Ingredient.ingid=Stores.ingid AND Stores.pid=Post.pid AND Post.pid=MakePost.pid 
+					AND MakePost.uid=Users.uid GROUP BY date, Stores.pid, Users.uid, active, caption, recipe 
+					HAVING COUNT(Stores.ingid) = $ingnum;");				
 				$result = pg_query($conn, $query);
 				//Find the number of divs you will need to generate
 				$numOfRows = pg_num_rows ($result);

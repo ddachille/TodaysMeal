@@ -56,7 +56,8 @@
 				//Then make the query
 				$ingname= $_GET['SearchNameIng'];
 				$ingname= ucwords("$ingname");
-				$query = sprintf("SELECT Users.uid, Stores.pid, Users.username FROM Ingredient, Stores, Users, Post, MakePost 
+				$query = sprintf("SELECT Users.uid, Stores.pid, active, date, caption, recipe, Users.username 
+					FROM Ingredient, Stores, Users, Post, MakePost 
 					WHERE name = '$ingname' AND Ingredient.ingid=Stores.ingid AND Stores.pid=Post.pid AND Post.pid=MakePost.pid 
 					AND MakePost.uid=Users.uid;");				
 				$result = pg_query($conn, $query);
