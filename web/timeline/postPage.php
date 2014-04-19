@@ -27,7 +27,7 @@
   						echo "Connection failed";
 					}
 
-					//first get the username stored in the URL
+			//first get the username stored in the URL
 			$username = $_GET["username"];
 			
 			//make sure that username exists
@@ -55,18 +55,48 @@
 			}else{
 				echo "<h1 id=\"timeline\">Error: Username \"".$username."\" does not exists</h1>";
 			}
+
+			//first get the pid stored in the URL
+$pid = $_GET["pid"];
+
+//make sure that pid exists
+$query = sprintf("SELECT EXISTS(SELECT * FROM Post WHERE pid = '".$pid."');");
+$result = pg_query($conn, $query);
+if(!$result){
+	echo "An error occured.\n";
+	exit;
+}
+
+$pidExists = pg_fetch_result($result, 0, "exists");
+
+if($pidExists == "t"){
+	$query = sprintf("SELECT pid FROM Post WHERE pid = '".$pid."';");
+	$result = pg_query($conn, $query);
+
+	if(!$result){
+		echo "An error occured.\n";
+		exit;
+	}
+
+	$temp = pg_fetch_row($result, 0);
+	$pid = $temp[0];
+	//echo "<h1 id=\"timeline\">".$pid."</h1>";
+}else{
+	echo "<h1 id=\"timeline\">Error: pID \"".$pid."\" does not exists</h1>";
+}
+
   	
   					$query = sprintf(
 					"WITH Userposts AS(
 						SELECT username, pid
 						FROM (Users JOIN MakePost ON (Users.uid = MakePost.uid))
-						WHERE Users.uid = 15 AND pid=2)
+						WHERE pid=".$pid.")
 					SELECT username, caption, recipe, Post.pid FROM (Userposts JOIN Post ON (Post.pid = Userposts.pid))");
 
 					$query2 = sprintf(
 					"SELECT Ingredient.amount, Ingredient.units, Ingredient.name
 						FROM (Stores JOIN Ingredient ON (Ingredient.ingid = Stores.ingid))
-						WHERE Stores.pid=2");
+						WHERE Stores.pid=".$pid);
 					
 					$result = pg_query($conn, $query);
 					$result2 = pg_query($conn, $query2);

@@ -1,7 +1,8 @@
 #!/usr/local/bin/php
 
 <link href="css/bootstrap.css" rel="stylesheet">
-<link href="timelineCSS.css" rel="stylesheet">	
+<link href="timelineCSS.css" rel="stylesheet">
+	
 
 <div class="container">
     <div class="page-header text-center">
@@ -28,7 +29,6 @@
 			
 			$usernameExists = pg_fetch_result($result, 0, "exists");
 			
-			
 			if($usernameExists == "t"){
 				$query = sprintf("SELECT uid FROM Users WHERE username = '".$username."';");
 				$result = pg_query($conn, $query);
@@ -40,22 +40,7 @@
 			
 				$temp = pg_fetch_row($result, 0);
 				$uid = $temp[0];
-				//Then make the query
-				$query = sprintf("WITH Userposts AS(
-				SELECT Users.uid, pid
-				FROM (Users JOIN MakePost ON (Users.uid = MakePost.uid))
-				WHERE Users.uid = ".$uid.")
-				SELECT Userposts.uid, Userposts.pid, active, date, caption, recipe
-				FROM (Userposts JOIN Post ON (Userposts.pid = Post.pid))
-				WHERE active =true;");
-				$result = pg_query($conn, $query);
-				//Find the number of divs you will need to generate
-				$numOfRows = pg_num_rows ($result);
-				if($numOfRows > 0){
-					echo "<h1 id=\"timeline\">".$username."</h1>";
-				}else{
-					echo "<h1 id=\"timeline\">".$username." has no active posts.</h1>";
-				}
+				echo "<h1 id=\"timeline\">".$username."</h1>";
 			}else{
 				echo "<h1 id=\"timeline\">Error: Username \"".$username."\" does not exists</h1>";
 			}
@@ -126,6 +111,13 @@
 	        	//This PHP scrip makes a query for all uid=15 posts
 	        	//It then creates a div box for each post with a for loop
 	        	
+	        	//First connect to the database        	
+	        	$conn = pg_connect('user=js7 host=postgres dbname=meal password=MealAdminOfDoom123');
+	  	
+				if(!$conn){
+					echo "Connection failed";
+				}
+				
 				//Then make the query
 				$query = sprintf("WITH Userposts AS(
 				SELECT Users.uid, pid
@@ -151,6 +143,7 @@
 	        		$caption = $currRow[4];
 	        		$isActive = $currRow[2];
 	        		$date = $currRow[3];
+				$pid = $currRow[1];
 	        	
 	        		//for each row, create the list object and div class inside of it
 	        		if($inverted){ //if it's inverted, make sure to put this in the list
@@ -172,7 +165,7 @@
 						echo "<a class=\"pull-left\">".$date."</a>";
 	                	//echo "<a><i class=\"glyphicon glyphicon-thumbs-up\"></i></a>";
 	                	//echo "<a><i class=\"glyphicon glyphicon-share\"></i></a>";
-	                	echo "<a class=\"pull-right\">View Post</a>";
+	                	echo "<a href=\"postPage.php?username=".$username."&pid=".$pid."\" class=\"pull-right\">View Post</a>";
 	            	echo "</div>";
 	            	echo "</div>";
 	        		echo "</li>";
@@ -180,10 +173,6 @@
 	        		$inverted = !$inverted; //flip which side the post will be on each time
 					
 	        	}
-	        	
-	        	if($numRows == 0){
-					echo "<h1 id=\"timeline\>".$username." does not have posts to display.</h1>";
-				}
 	        }
         ?>
         
