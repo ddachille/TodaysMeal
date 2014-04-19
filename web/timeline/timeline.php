@@ -155,7 +155,8 @@
 				WHERE Users.uid = ".$uid.")
 				SELECT Userposts.uid, Userposts.pid, active, date, caption, recipe, imgpath
 				FROM (Userposts JOIN Post ON (Userposts.pid = Post.pid))
-				WHERE active =true;");
+				WHERE active =true
+				ORDER BY date DESC;");
 				$result = pg_query($conn, $query);
 				//Find the number of divs you will need to generate
 				$numOfRows = pg_num_rows ($result);

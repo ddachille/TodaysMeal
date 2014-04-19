@@ -2,6 +2,37 @@
 
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="timelineCSS.css" rel="stylesheet">
+<link href="css/simple-sidebar.css" rel="stylesheet">
+<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="#">Today's Meal</a>
+                </li>
+                <li><a href="indextimeline.php">Dashboard</a>
+                </li>
+                <li><a href="#">My Timeline</a>
+                </li>
+                <li><a href="search.php">Search</a>
+                </li>
+                <li><a href="#">Logout</a>
+                </li>
+                <li><a href="#">&nbsp;</a>
+                </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id dui vitae libero semper placerat id et mauris. Sed fermentum lorem eu fermentum semper. Pellentesque blandit. 
+                </li>
+                <li><a href="#"></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            <!-- Keep all page content within the page-content inset div! -->
+            <div class="page-content inset">
 	
 
 <div class="container">
@@ -15,6 +46,9 @@
 			}else{
 				$connEstablished = true;
 			}
+			
+			echo "<div align=\"right\"><h1 id=\"timeline\">Dashboard&emsp;&emsp;&emsp;&emsp;&emsp;</h1></div>";
+			
 		?>
     </div>
     <ul class="timeline">
@@ -22,8 +56,10 @@
 				//Then make the query
 				$ingname= $_GET['SearchNameIng'];
 				$ingname= ucwords("$ingname");
-				$query = sprintf("SELECT pid, name FROM Ingredient, Stores 
-					WHERE name = '$ingname' AND Ingredient.ingid=Stores.ingid;");				
+				$query = sprintf("SELECT Users.uid, Stores.pid, active, date, caption, recipe, Users.username 
+					FROM Ingredient, Stores, Users, Post, MakePost 
+					WHERE name = '$ingname' AND Ingredient.ingid=Stores.ingid AND Stores.pid=Post.pid AND Post.pid=MakePost.pid 
+					AND MakePost.uid=Users.uid;");				
 				$result = pg_query($conn, $query);
 				//Find the number of divs you will need to generate
 				$numOfRows = pg_num_rows ($result);
@@ -78,5 +114,20 @@
     </ul>
 </div>
 
+
+			</div>
+        </div>
+
+</div>
+
 <script src="js/bootstrap.min.js"></script>
 <script src="timelineJS.js"></script>
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/bootstrap.js"></script>
+    <!-- Custom JavaScript for the Menu Toggle -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+</script>
