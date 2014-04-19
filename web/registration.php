@@ -19,12 +19,13 @@
 
 	$query2 = "INSERT INTO Users VALUES($arr[0], '$_POST[username]','$_POST[hashedpw]')";
 	$result2 = pg_query($db,$query2);
+
+	//redirect
+	$username =$_POST[username];
+   	header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
+
 	
 ?>  
 
-<?php
 
-   header( 'Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php' ) ;
-
-?>
 </body>
