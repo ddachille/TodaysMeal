@@ -7,8 +7,7 @@
  
 <form name="index" action="registration.php" method="POST" >  
 Username:<input type="text" name="username" /></br>  
-Password:<input type="text" name="hashedpw" /></br>
-Set Profile to Private? (true or false): <input type="text" name= "isPrivate" /></br>     
+Password:<input type="password" name="hashedpw" /></br>     
 <input type="submit" />  
 </form>  
 
