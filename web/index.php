@@ -1,11 +1,9 @@
 #!/usr/local/bin/php
 
 <html>
-	<head><title>Register or Log In</title></head>
+	<head><title>Index</title></head>
 <body>
 
- We should have this index page have an option to either register or log in.
-<a href= "register.php">REGISTER?</a>
 
 <?php 
 	print( "Hello World<br />"); 
