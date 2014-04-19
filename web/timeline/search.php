@@ -5,8 +5,8 @@
 <body>
 
 
-<form name="input" action="username_search.php" method="get">
-Search by Username: <input type="text" name="SearchUser">
+<form name="input" action="timeline.php" method="get">
+Search by Username: <input type="text" name="username">
 <input type="submit" value="Submit">
 </form>
 
