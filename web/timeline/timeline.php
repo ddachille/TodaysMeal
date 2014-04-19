@@ -173,7 +173,8 @@
 	        		$caption = $currRow[4];
 	        		$isActive = $currRow[2];
 	        		$date = $currRow[3];
-				$pid = $currRow[1];
+					$pid = $currRow[1];
+					$imgpath = $currRow[5];
 	        	
 	        		//for each row, create the list object and div class inside of it
 	        		if($inverted){ //if it's inverted, make sure to put this in the list
@@ -184,7 +185,7 @@
 	          		echo "<div class=\"timeline-badge primary\"><a><i class=\"glyphicon glyphicon-record\" rel=\"tooltip\" title=\"11 hours ago via Twitter\" id=\"\"></i></a></div>";
 	          		echo "<div class=\"timeline-panel\">";
 	            	echo "<div class=\"timeline-heading\">";
-	            	  
+	            		echo "<img class=\"img-responsive\" src=\"".$imgpath."\" />";
 	            	echo "</div>";
 	        		echo "<div class=\"timeline-body\">";
 						echo "<a href=http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=".$username."><b>&nbsp;&nbsp;".$username."</b></a>";
