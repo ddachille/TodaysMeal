@@ -21,8 +21,9 @@
         <?php 
 				//Then make the query
 				$ingname= $_GET['SearchNameIng'];
+				$ingname= ucwords("$ingname");
 				$query = sprintf("SELECT pid, name FROM Ingredient, Stores 
-					WHERE name = '$ingname' AND Ingredient.ingid=Stores.ingid;");
+					WHERE name = '$ingname' AND Ingredient.ingid=Stores.ingid;");				
 				$result = pg_query($conn, $query);
 				//Find the number of divs you will need to generate
 				$numOfRows = pg_num_rows ($result);
