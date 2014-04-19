@@ -3,8 +3,22 @@ Pieazza
 
 TODO:
 
-Image Posting (Storing and Viewing Images)
+-User Commments
+-Sending Comments
+-Log-in
+-Current logged in user's profile
+-Log out
 
+-Register
+-password functions
+
+-Banner
+-Logo to Front Page
+-Settings
+
+
+DONE:
+Image Posting (Storing and Viewing Images)
 Working sidebar
 
 Sidebar Hyperlinks:
@@ -15,13 +29,4 @@ Sidebar Hyperlinks:
 	-Search by Username
 	-Get all Posts where Num of Ing < #
 	-Get all Posts from Ing 'name'
--Log out
--Current logged in user's profile
--settings?
-
--My Page (active posts?)
-
--Register
-	-password functions
-
--Log-in
+-My Page
