@@ -129,7 +129,7 @@ WITH Userposts AS(
 SELECT Users.uid, pid
 FROM (Users JOIN MakePost ON (Users.uid = MakePost.uid))
 WHERE Users.uid = 15)
-SELECT Userposts.uid, Userposts.pid, active, date, caption, recipe
+SELECT Userposts.uid, Userposts.pid, active, date, caption, recipe, imgpath
 FROM (Userposts JOIN Post ON (Userposts.pid = Post.pid));
 
 --Get all comments from Post 2:
