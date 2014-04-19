@@ -16,7 +16,7 @@
                 </li>
                 <li><a href="#">My Timeline</a>
                 </li>
-                <li><a href="#">Search</a>
+                <li><a href="search.php">Search</a>
                 </li>
                 <li><a href="#">Logout</a>
                 </li>
