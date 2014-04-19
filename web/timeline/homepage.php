@@ -68,7 +68,7 @@
         <p><a class="btn btn-primary btn-lg" role="button" href="register.php">Sign Up </a></p>
       </div>
       </div>
-      <img src="images\redicecream.jpg" width="33.33333333%"><img src="images\egg.jpg" width="33.33333334%" height="50%"><img src="images\sushi.jpg" width="33.33333333%">
+      <img src="image\redicecream.jpg" width="33.33333333%"><img src="image\egg.jpg" width="33.33333334%" height="50%"><img src="image\sushi.jpg" width="33.33333333%">
     </div><!-- /container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
