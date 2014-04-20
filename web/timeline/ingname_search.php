@@ -1,5 +1,14 @@
 #!/usr/local/bin/php
 
+<?php
+	session_start();
+	if($_SESSION['login'] == "t"){
+		$session_username = $_SESSION['username'];
+	}else{
+		$session_username = "f"; 
+	}
+?>
+
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="timelineCSS.css" rel="stylesheet">
 <link href="css/simple-sidebar.css" rel="stylesheet">
@@ -14,17 +23,18 @@
                 </li>
                 <li><a href="indextimeline.php">Dashboard</a>
                 </li>
-                <li><a href="#">My Timeline</a>
+               	<li>
+                <?php
+                	echo "<a href=\"timeline.php?username=".$session_username."\">My Timeline</a>"
+                ?>
                 </li>
                 <li><a href="search.php">Search</a>
                 </li>
-                <li><a href="homepage.php">Logout</a>
+                <li><a href="homepage.php?login=logout">Logout</a>
                 </li>
-                <li><a href="#">&nbsp;</a>
+                <li><a href="newPage.php">Post</a>
                 </li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id dui vitae libero semper placerat id et mauris. Sed fermentum lorem eu fermentum semper. Pellentesque blandit. 
-                </li>
-                <li><a href="#"></a>
+                <li>RIP Lorum Ipsum
                 </li>
             </ul>
         </div>

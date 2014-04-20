@@ -32,6 +32,11 @@
                 </li>
                 <li><a href="homepage.php?login=logout">Logout</a>
                 </li>
+                </li>
+                <li><a href="newPage.php">Post</a>
+                </li>
+                <li>RIP Lorum Ipsum
+                </li>
             </ul>
         </div>
 
