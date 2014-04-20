@@ -12,7 +12,7 @@
     <title>Register</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="timeline/css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
         <style>

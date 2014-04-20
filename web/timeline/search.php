@@ -124,12 +124,13 @@
 					  <form class="form-signin" role="form" action="ingname_search.php" method="get">
 						<h3 class="form-signin-heading">Ingredient Name:&emsp;&emsp;&nbsp;&nbsp;&emsp;</h3>
 						<input type="text" class="form-control" placeholder="Name" required="" autofocus="" name="SearchNameIng">
+
 						<button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
 					  </form>
 						&emsp;
 					  <form class="form-signin" role="form" action="ingnum_search.php" method="get">
 						<h3 class="form-signin-heading">Number of Ingredients:&emsp;</h3>
-						<input type="text" class="form-control" placeholder="Number" required="" autofocus="" name="SearchNumIng">
+						<input type="number" min="0" class="form-control" placeholder="Number" required="" autofocus="" name="SearchNumIng">
 						<button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
 					  </form>
 				</ul>
