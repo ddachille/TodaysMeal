@@ -6,6 +6,7 @@
 		$session_username = $_SESSION['username'];
 	}else{
 		$session_username = "f"; 
+		header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/homepage.php?login=failedpost");
 	}
 	
 	$_SESSION['img'] = $_POST['img'];

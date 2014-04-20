@@ -41,7 +41,7 @@
 			echo " "; 
 			echo $result;
 			$_SESSION['login'] = "f";
-			//header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/homepage.php?login=failed");
+			header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/homepage.php?login=failed");
 		}
 	}else{
 		echo "Checking $_SESSION array ";

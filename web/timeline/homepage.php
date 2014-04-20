@@ -95,6 +95,9 @@
     	if($_GET['login'] == "logout"){
     		echo "<div class=\"alert alert-warning\">You have been logged out</div>";
     	}
+    	if($_GET['login'] == "failedpost"){
+    		echo "<div class=\"alert alert-danger\">You must log in to make a post</div>";
+    	}
     	
     ?>    
     </div><!-- /container -->
