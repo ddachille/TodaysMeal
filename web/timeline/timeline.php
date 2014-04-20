@@ -1,4 +1,17 @@
 #!/usr/local/bin/php
+<<<<<<< HEAD
+=======
+
+<?php
+	session_start();
+	if($_SESSION['login'] == "t"){
+		$session_username = $_SESSION['username'];
+	}else{
+		$session_username = "f"; 
+	}
+?>
+
+>>>>>>> 4512bdba8371bba1bc7f2aa40eac415ce91785f1
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="timelineCSS.css" rel="stylesheet">
 <link href="css/simple-sidebar.css" rel="stylesheet">
@@ -13,15 +26,20 @@
                 </li>
                 <li><a href="indextimeline.php">Dashboard</a>
                 </li>
-                <li><a href="#">My Timeline</a>
+                <li>
+                <?php
+                	echo "<a href=\"timeline.php?username=".$session_username."\">My Timeline</a>"
+                ?>
                 </li>
                 <li><a href="search.php">Search</a>
                 </li>
-                <li><a href="homepage.php">Logout</a>
+                <li><a href="homepage.php?login=logout">Logout</a>
+                </li>
+                <li><a href="newPage.php">Post</a>
                 </li>
                 <li><a href="#">&nbsp;</a>
                 </li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id dui vitae libero semper placerat id et mauris. Sed fermentum lorem eu fermentum semper. Pellentesque blandit, lorem at consequat rutrum, magna arcu consectetur massa, at tempor magna purus ut sem. Aliquam sodales laoreet massa nec semper. 
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id dui vitae libero semper placerat id et mauris. Sed fermentum lorem eu fermentum semper. Pellentesque blandit. 
                 </li>
                 <li><a href="#"></a>
                 </li>
@@ -58,7 +76,11 @@
 			
 			$usernameExists = pg_fetch_result($result, 0, "exists");
 			
-			if($usernameExists == "t"){
+			if($username == "f"){
+				echo "<h1 id=\"timeline\">Error: You are not logged in!</h1>";
+				$usernameExists == "f";
+			}
+			else if($usernameExists == "t"){
 				$query = sprintf("SELECT uid FROM Users WHERE username = '".$username."';");
 				$result = pg_query($conn, $query);
 	
@@ -69,8 +91,8 @@
 			
 				$temp = pg_fetch_row($result, 0);
 				$uid = $temp[0];
-			echo "<h1 id=\"timeline\"><div id=\"textbox\"><p class=\"alignleft\"><img src=\"logo/banner1.png\"></p><p class=\"alignright\">Timeline of ".$username."</p></div></h1>";
-			echo "<div style=\"clear: both;\"></div>";	
+				echo "<h1 id=\"timeline\"><div id=\"textbox\"><p class=\"alignleft\"><img src=\"logo/banner1.png\"></p><p class=\"alignright\">Timeline of ".$username."</p></div></h1>";
+				echo "<div style=\"clear: both;\"></div>";	
 			}else{
 				echo "<h1 id=\"timeline\">Error: Username \"".$username."\" does not exists</h1>";
 			}

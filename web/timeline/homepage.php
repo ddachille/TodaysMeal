@@ -1,4 +1,26 @@
 #!/usr/local/bin/php
+<<<<<<< HEAD
+=======
+
+<?php
+	if($_GET['login'] == "logout"){
+		// Unset all of the session variables.
+		$_SESSION = array();
+
+		// If it's desired to kill the session, also delete the session cookie.
+		// Note: This will destroy the session, and not just the session data!
+		if (ini_get("session.use_cookies")) {
+		    $params = session_get_cookie_params();
+		    setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"],
+    	   				 $params["secure"], $params["httponly"]);
+		}
+
+		// Finally, destroy the session.
+		session_destroy();
+	}
+?>
+
+>>>>>>> 4512bdba8371bba1bc7f2aa40eac415ce91785f1
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,14 +64,14 @@
           <a class="navbar-brand" href="#"></a>
         </div>
         <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
+          <form class="navbar-form navbar-right" action="login.php" role="form" method="get"> 
           
             <div class="form-group">
             
-              <input type="text" placeholder="Email" class="form-control">
+              <input type="text" placeholder="Email" class="form-control" name="username">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
+              <input type="password" placeholder="Password" class="form-control" name="hashedpw">
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
             
@@ -69,6 +91,15 @@
       </div>
       <img src="image/redicecream.jpg" width="33.33333333%"><img src="image/egg.jpg" width="33.33333334%" height="50%"><img src="image/sushi.jpg" width="33.33333333%">
     </div><!-- /container -->
+    <?php
+    	if($_GET['login'] == "failed"){
+    		echo "<div class=\"alert alert-danger\">Login failed, please try again</div>";
+    	}
+    	if($_GET['login'] == "logout"){
+    		echo "<div class=\"alert alert-warning\">You have been logged out</div>";
+    	}
+    	
+    ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>

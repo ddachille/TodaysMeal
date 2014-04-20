@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <link rel="shortcut icon" href="/logo/icon.ico">
 
-    <title>Register</title>
+    <title>Search</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -95,12 +95,38 @@
 		<![endif]-->
 		</head>
 
+<<<<<<< HEAD
 			<div class="container">
 				<ul class="timeline" style="padding-left: 0px;">
 					<div class="page-header text-center">
 						<h1 id="timeline"><div id="textbox"><p class="alignleft"><img src="logo/banner1.png"></p><p class="alignright">Search</p></div></h1>
 						<div style="clear: both;"></div>
 					</div>
+=======
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin" role="form" action="timeline.php" method="get">
+        <h2 class="form-signin-heading">Search by Username:</h2>
+        <input type="text" class="form-control" placeholder="User Name" required autofocus name="username">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+      </form>
+
+      <form class="form-signin" role="form" action="ingname_search.php" method="get">
+        <h2 class="form-signin-heading">Search by Ingredient Name:</h2>
+        <input type="text" class="form-control" placeholder="Name" required autofocus name="SearchNameIng">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+      </form>
+
+      <form class="form-signin" role="form" action="ingnum_search.php" method="get">
+        <h2 class="form-signin-heading">Search by Number of Ingredients:</h2>
+        <input type="number" min="0" class="form-control" placeholder="Number" required autofocus name="SearchNumIng">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+      </form>
+
+    </div> <!-- /container -->
+>>>>>>> 4512bdba8371bba1bc7f2aa40eac415ce91785f1
 
 					  <form class="form-signin" role="form" action="timeline.php" method="get">
 						<h3 class="form-signin-heading">Search by Username:&nbsp;&nbsp;&emsp;</h3>

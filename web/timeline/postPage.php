@@ -13,11 +13,16 @@
                 </li>
                 <li><a href="indextimeline.php">Dashboard</a>
                 </li>
-                <li><a href="#">My Timeline</a>
+                <li>
+                <?php
+                	echo "<a href=\"timeline.php?username=".$session_username."\">My Timeline</a>"
+                ?>
                 </li>
                 <li><a href="search.php">Search</a>
                 </li>
-                <li><a href="homepage.php">Logout</a>
+                <li><a href="homepage.php?login=logout">Logout</a>
+                </li>
+                <li><a href="newPage.php">Post</a>
                 </li>
                 <li><a href="#">&nbsp;</a>
                 </li>
