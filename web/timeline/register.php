@@ -19,7 +19,7 @@
 	body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #eee;
+  background-color: #FFF;
 }
 
 .form-signin {
@@ -69,8 +69,11 @@
   <body>
 
     <div class="container">
-
-      <form class="form-signin" role="form" action="registration.php" method="POST">
+		<div class="page-header text-center">
+			<h1 id="timeline"><div id="textbox"><p class="alignleft"><img src="logo/banner1.png"></p><p class="alignright">Register</p></div></h1>
+			<div style="clear: both;"></div>
+		</div>
+		<form class="form-signin" role="form" action="registration.php" method="POST">
         <h2 class="form-signin-heading">Please Register Here</h2>
         <input type="text" class="form-control" placeholder="User Name" required autofocus name="username">
         <input type="password" class="form-control" placeholder="Password" required autofocus name="hashedpw">
