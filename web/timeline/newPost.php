@@ -59,7 +59,7 @@
 	<!-- Keep all page content within the page-content inset div! -->
 		<div class="page-content inset"> 
 
-		<!-- Custom styles for this template -->
+		<!-- Custom styles for this template-->
 		<style>
 			body {
 			  padding-top: 0px;
@@ -116,7 +116,7 @@
 						<div style="clear: both;"></div>
 					</div>
 					  <form class="form-signin" role="form" action="makePost.php" method="post">
-						<h3 class="form-signin-heading">Create a New Post!&nbsp;&nbsp;&emsp;</h3>
+						<h3 class="form-signin-heading">Input your ingredients! &nbsp;&nbsp;&emsp;</h3>
 						<input type="url" class="form-control" placeholder="Image URL" required="" autofocus="" name="img">
 						<input type="text" class="form-control" placeholder="Caption" required="" autofocus="" name="caption">
 						<input type="text" class="form-control" placeholder="Recipe" required="" autofocus="" name="recipe">
