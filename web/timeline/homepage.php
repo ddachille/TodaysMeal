@@ -60,14 +60,14 @@
           <a class="navbar-brand" href="#"></a>
         </div>
         <div class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" action="login.php" role="form" method="get"> 
+          <form class="navbar-form navbar-right" action="login.php" role="form" method="post"> 
           
             <div class="form-group">
             
               <input type="text" placeholder="Email" class="form-control" name="username">
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control" name="hashedpw">
+              <input type="password" placeholder="Password" class="form-control" name="password">
             </div>
             <button type="submit" class="btn btn-success">Sign in</button>
             
@@ -86,8 +86,7 @@
       </div>
       </div>
       <img src="image/redicecream.jpg" width="33.33333333%"><img src="image/egg.jpg" width="33.33333334%" height="50%"><img src="image/sushi.jpg" width="33.33333333%">
-    </div><!-- /container -->
-    <?php
+   	<?php
     	if($_GET['login'] == "failed"){
     		echo "<div class=\"alert alert-danger\">Login failed, please try again</div>";
     	}
@@ -96,6 +95,7 @@
     	}
     	
     ?>
+    </div><!-- /container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>

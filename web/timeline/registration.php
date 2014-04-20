@@ -16,8 +16,12 @@
 	$result = pg_query($db, $query);
 	$arr = pg_fetch_row($result);
 	$arr[0] = $arr[0] +1; 
+	
+	$salt = uniqid(mt_rand(), true);
+		
+	$hashedPassword = crypt($_POST['Password'], salt);
 
-	$query2 = "INSERT INTO Users VALUES($arr[0], '$_POST[username]','$_POST[hashedpw]')";
+	$query2 = "INSERT INTO Users VALUES($arr[0], '$_POST[username]','".$hashedPassword."')";
 	$result2 = pg_query($db,$query2);
 
 	//redirect
