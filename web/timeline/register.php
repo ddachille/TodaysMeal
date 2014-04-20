@@ -76,7 +76,7 @@
 		<form class="form-signin" role="form" action="registration.php" method="POST">
         <h2 class="form-signin-heading">Please Register Here</h2>
         <input type="text" class="form-control" placeholder="User Name" required autofocus name="username">
-        <input type="password" class="form-control" placeholder="Password" required autofocus name="hashedpw">
+        <input type="password" class="form-control" placeholder="Password" required autofocus name="password">
        
         <button class="btn btn-lg btn-primary btn-block" type="submit">Register!</button>
       </form>

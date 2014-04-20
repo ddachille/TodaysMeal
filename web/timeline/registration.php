@@ -19,7 +19,7 @@
 	
 	$salt = uniqid(mt_rand(), true);
 		
-	$hashedPassword = crypt($_POST['Password'], salt);
+	$hashedPassword = crypt($_POST['password'], salt);
 
 	$query2 = "INSERT INTO Users VALUES($arr[0], '$_POST[username]','".$hashedPassword."')";
 	$result2 = pg_query($db,$query2);
