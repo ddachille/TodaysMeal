@@ -19,7 +19,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="/logo/icon.ico">
 
-    <title>New Post</title>
+    <title>Ingredients</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -59,7 +59,7 @@
 	<!-- Keep all page content within the page-content inset div! -->
 		<div class="page-content inset"> 
 
-		<!-- Custom styles for this template-->
+		<!-- Custom styles for this template -->
 		<style>
 			body {
 			  padding-top: 0px;
@@ -67,7 +67,7 @@
 			  background-color: #fff;
 			}
 			.form-signin {
-			  max-width: 330px;
+			  max-width: 1000px;
 			  padding: 15px;
 			  margin: 0 auto;
 			  display: inline-block;
@@ -101,7 +101,7 @@
 			  border-top-left-radius: 0;
 			  border-top-right-radius: 0;
 			}
-		</style>
+		</style> 
 
 		   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -115,21 +115,37 @@
 						<h1 id="timeline"><div id="textbox"><p class="alignleft"><img src="logo/banner1.png"></p><p class="alignright">New Post</p></div></h1>
 						<div style="clear: both;"></div>
 					</div>
-<<<<<<< HEAD
 					  <form class="form-signin" role="form" action="makePost.php" method="post">
 						<h3 class="form-signin-heading">Input your ingredients! &nbsp;&nbsp;&emsp;</h3>
-=======
-					  <form class="form-signin" role="form" action="makeIngredient.php" method="post">
-						<h3 class="form-signin-heading">Create a New Post!&nbsp;&nbsp;&emsp;</h3>
->>>>>>> 7fdb035fee309821dfb07da1e0a1b474420b008d
-						<input type="url" class="form-control" placeholder="Image URL" required="" autofocus="" name="img">
-						<input type="text" class="form-control" placeholder="Caption" required="" autofocus="" name="caption">
-						<input type="text" class="form-control" placeholder="Recipe" required="" autofocus="" name="recipe">
-
-						<input type="number" class="form-control" placeholder="Number of Ingredients" required="" autofocus="" name="ingnum">
-						<br/>		
+						<?php
+						$count = $POST_['ingnum'];
 						
-						<button class="btn btn-lg btn-primary btn-block" type="submit">Continue</button>
+						for($i = 0; $i < $count; $i++){
+							echo "<div class=\"row\">";
+  								echo "<div class=\"col-xs-4\">";
+    								echo "<input type=\"text\" class=\"form-control\" name=\"ingredient[]\" placeholder=\"Ingredient\">";
+  								echo "</div>";
+  								echo "<div class=\"col-xs-4\">";
+    								echo "<input type=\"number\" class=\"form-control\" name=\"amount[]\" placeholder=\"Amount\">";
+ 								echo "</div>";
+  								echo "<div class=\"col-xs-4\">";
+    								echo "<select name=\"measurement[]\">";
+										echo "<option value=\"\">Measurement</option>";
+										echo "<option value=\"CUP\"> CUP</option>";
+										echo "<option value=\"OZ\">OZ</option>";
+										echo "<option value=\"scoop\">SCOOP</option>";
+										echo "<option value=\"slice\">SLICE</option>";
+										echo "<option value=\"TBSP\">TBSP</option>";
+										echo "<option value=\"TSP\">TSP</option>";
+									echo "</select>";
+								echo "</div>";
+							echo "</div>";
+							echo "<br>";
+							echo "<br>";
+
+						}
+						?>
+						<button class="btn btn-primary btn-lg" type="submit">Submit</button>
 					  </form>
 
 				</ul>
