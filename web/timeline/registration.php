@@ -16,16 +16,21 @@
 	$result = pg_query($db, $query);
 	$arr = pg_fetch_row($result);
 	$arr[0] = $arr[0] +1; 
-	
-	$salt = uniqid(mt_rand(), true);
 		
-	$hashedPassword = crypt($_POST['password'], salt);
+	$salt = "$6$rounds=5000$ghdkenbkdkanbvjkdflnfmedf";
+	
+	$hashedPassword = crypt($_POST['password'], $salt);
 
 	$query2 = "INSERT INTO Users VALUES($arr[0], '$_POST[username]','".$hashedPassword."')";
 	$result2 = pg_query($db,$query2);
 
 	//redirect
 	$username =$_POST[username];
+	
+	session_start();
+	$_SESSION['login'] = "t";
+	$_SESSION['username'] = $username;
+	
    	header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
 
 ?>  

@@ -25,17 +25,23 @@
 		}
 		
 		$user = pg_fetch_row($result, 0);
-		$dbHashedPassword = $user['hashedpw'];
+		$dbHashedPassword = $user[1];
+		$result = crypt($password, $dbHashedPassword);
 		
-		if(crypt($password, $dbHashedPassword) == $dbHashedPassword){
+		if (strcmp($result, $dbHashedPasword)){
 			echo "Authentication success";
 			$_SESSION['username'] = $username;
-			$_SESSION['login'] = $exists;
+			$_SESSION['login'] = "t";
 			header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
 		}else{
-			echo "Authenticiation failed";
-			$_SESSION['login'] = "f"; 
-			header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/homepage.php?login=failed" ) ;
+			echo "Authenticiation failed ";
+			echo $password;
+			echo " ";
+			echo $dbHashedPassword;
+			echo " "; 
+			echo $result;
+			$_SESSION['login'] = "f";
+			//header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/homepage.php?login=failed");
 		}
 	}else{
 		echo "Checking $_SESSION array ";
