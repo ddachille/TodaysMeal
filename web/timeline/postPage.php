@@ -18,7 +18,7 @@
                 </li>
                 <li><a href="search.php">Search</a>
                 </li>
-                <li><a href="#">Logout</a>
+                <li><a href="homepage.php">Logout</a>
                 </li>
                 <li><a href="#">&nbsp;</a>
                 </li>
@@ -35,8 +35,6 @@
             <div class="page-content inset">
                 <div class="container">
     <div class="page-header text-center">
-        <h1 id="timeline"></h1>
-    </div>
     <?php
 		$conn = pg_connect('user=js7 host=postgres dbname=meal password=MealAdminOfDoom123');
 		if(!$conn){
@@ -77,7 +75,8 @@
 
 			$temp = pg_fetch_row($result, 0);
 			$pid = $temp[0];
-			//echo "<h1 id=\"timeline\">".$pid."</h1>";
+			echo "<h1 id=\"timeline\"><div id=\"textbox\"><p class=\"alignleft\"><img src=\"logo/banner1.png\"></p><p class=\"alignright\">Post</p></div></h1>";
+	 		echo "<div style=\"clear: both;\"></div>";
 		}
 		
 		$query = sprintf(
@@ -106,7 +105,7 @@
 		$arr2 = pg_fetch_row($result2);
 						
 	?>
-    
+    </div>
     
     <ul class="timeline">   
         <li>

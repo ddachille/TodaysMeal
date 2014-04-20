@@ -18,7 +18,7 @@
                 </li>
                 <li><a href="search.php">Search</a>
                 </li>
-                <li><a href="#">Logout</a>
+                <li><a href="homepage.php">Logout</a>
                 </li>
                 <li><a href="#">&nbsp;</a>
                 </li>
@@ -70,7 +70,8 @@
 			
 				$temp = pg_fetch_row($result, 0);
 				$uid = $temp[0];
-				echo "<div align=\"right\"><h1 id=\"timeline\">Timeline of ".$username."&emsp;&emsp;&emsp;&emsp;&emsp;</h1></div>";
+			echo "<h1 id=\"timeline\"><div id=\"textbox\"><p class=\"alignleft\"><img src=\"logo/banner1.png\"></p><p class=\"alignright\">Timeline of ".$username."</p></div></h1>";
+			echo "<div style=\"clear: both;\"></div>";	
 			}else{
 				echo "<h1 id=\"timeline\">Error: Username \"".$username."\" does not exists</h1>";
 			}

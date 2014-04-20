@@ -52,6 +52,13 @@ a:hover {
 abbr[title] {
   border-bottom: 1px dotted;
 }
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+	margin: 30px 150px 0 0;
+}
 b,
 strong {
   font-weight: bold;
@@ -4368,7 +4375,7 @@ a.list-group-item.active > .badge,
   padding: 30px;
   margin-bottom: 0px;
   color: inherit;
-  background-color: #eee;
+  background-color: #fff;
 }
 .jumbotron h1,
 .jumbotron .h1 {
