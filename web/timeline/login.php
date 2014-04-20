@@ -13,7 +13,7 @@
   	$query = "SELECT EXISTS(SELECT * FROM Users WHERE username = '".$username."'
   			AND hashedpw = '".$hashedPW."');";
   				
-  	$result = pg_query($conn, $query);
+  	$result = pg_query($db, $query);
   	
   	if(!$result){
 		echo "An error occured.\n";
