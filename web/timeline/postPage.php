@@ -1,4 +1,14 @@
 #!/usr/local/bin/php
+
+<?php
+	session_start();
+	if($_SESSION['login'] == "t"){
+		$session_username = $_SESSION['username'];
+	}else{
+		$session_username = "f"; 
+	}
+?>
+
 <link href="css/bootstrapPOST.css" rel="stylesheet">
 <link href="postPageCSS.css" rel="stylesheet">
 <link href="css/simple-sidebar.css" rel="stylesheet">

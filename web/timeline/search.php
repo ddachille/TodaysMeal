@@ -1,4 +1,14 @@
 #!/usr/local/bin/php
+
+<?php
+	session_start();
+	if($_SESSION['login'] == "t"){
+		$session_username = $_SESSION['username'];
+	}else{
+		$session_username = "f"; 
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,11 +34,16 @@
 			</li>
 			<li><a href="indextimeline.php">Dashboard</a>
 			</li>
-			<li><a href="#">My Timeline</a>
+			<li>
+			<?php
+				echo "<a href=\"timeline.php?username=".$session_username."\">My Timeline</a>"
+			?>
 			</li>
 			<li><a href="search.php">Search</a>
 			</li>
-			<li><a href="homepage.php">Logout</a>
+			<li><a href="homepage.php?login=logout">Logout</a>
+			</li>
+			<li><a href="newPage.php">Post</a>
 			</li>
 			<li><a href="#">&nbsp;</a>
 			</li>

@@ -1,6 +1,4 @@
 #!/usr/local/bin/php
-<<<<<<< HEAD
-=======
 
 <?php
 	if($_GET['login'] == "logout"){
@@ -20,7 +18,6 @@
 	}
 ?>
 
->>>>>>> 4512bdba8371bba1bc7f2aa40eac415ce91785f1
 <!DOCTYPE html>
 <html lang="en">
   <head>

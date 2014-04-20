@@ -1,6 +1,4 @@
 #!/usr/local/bin/php
-<<<<<<< HEAD
-=======
 
 <?php
 	session_start();
@@ -11,7 +9,6 @@
 	}
 ?>
 
->>>>>>> 4512bdba8371bba1bc7f2aa40eac415ce91785f1
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="timelineCSS.css" rel="stylesheet">
 <link href="css/simple-sidebar.css" rel="stylesheet">
