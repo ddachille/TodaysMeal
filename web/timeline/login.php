@@ -14,7 +14,7 @@
   	
  	 	$query = "SELECT EXISTS(SELECT * FROM Users WHERE username = '".$username."'
   			AND hashedpw = '".$hashedpw."');";
-  				
+	
  	 	$result = pg_query($db, $query);
   	
  	 	if(!$result){
