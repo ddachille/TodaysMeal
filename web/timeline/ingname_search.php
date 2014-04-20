@@ -1,5 +1,4 @@
 #!/usr/local/bin/php
-
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="timelineCSS.css" rel="stylesheet">
 <link href="css/simple-sidebar.css" rel="stylesheet">

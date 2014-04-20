@@ -1,5 +1,4 @@
 #!/usr/local/bin/php
-
 <link href="css/bootstrapPOST.css" rel="stylesheet">
 <link href="postPageCSS.css" rel="stylesheet">
 <link href="css/simple-sidebar.css" rel="stylesheet">
