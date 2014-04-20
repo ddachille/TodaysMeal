@@ -18,6 +18,10 @@
 	
 	$username = $session_username;
 	$imgpath = $_SESSION['img'];
+	$caption = $_SESSION['caption'];
+	$recipe = $_SESSION['recipe'];
+	$uid = $_SESSION['uid'];
+
 	
 	$db = pg_connect("host=postgres dbname=meal user= js7 password=MealAdminOfDoom123");
 	//connection 
@@ -31,7 +35,7 @@
 	$arr[0] = $arr[0] +1; 	
 
 	//post query PID ACTIVE DATE CAPTION RECIPE IMG
-	$query3 = "INSERT INTO Post VALUES($arr[0], TRUE, '2014-04-21','$_POST[caption]','$_POST[recipe]', '$_POST[img]')";
+	$query3 = "INSERT INTO Post VALUES($arr[0], TRUE, '2014-04-21','caption','recipe', '$imgpath')";
 	$result3 = pg_query($db,$query3);
 
 	//update makepost and stores
@@ -63,7 +67,6 @@
 	}
 
 	//redirect to user's timeline?
-	$username =$_POST[username];
    	header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
 
 ?>  
