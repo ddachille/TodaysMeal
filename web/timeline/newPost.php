@@ -115,13 +115,8 @@
 						<h1 id="timeline"><div id="textbox"><p class="alignleft"><img src="logo/banner1.png"></p><p class="alignright">New Post</p></div></h1>
 						<div style="clear: both;"></div>
 					</div>
-<<<<<<< HEAD
-					  <form class="form-signin" role="form" action="makePost.php" method="post">
-						<h3 class="form-signin-heading">Input your ingredients! &nbsp;&nbsp;&emsp;</h3>
-=======
 					  <form class="form-signin" role="form" action="makeIngredient.php" method="post">
 						<h3 class="form-signin-heading">Create a New Post!&nbsp;&nbsp;&emsp;</h3>
->>>>>>> 7fdb035fee309821dfb07da1e0a1b474420b008d
 						<input type="url" class="form-control" placeholder="Image URL" required="" autofocus="" name="img">
 						<input type="text" class="form-control" placeholder="Caption" required="" autofocus="" name="caption">
 						<input type="text" class="form-control" placeholder="Recipe" required="" autofocus="" name="recipe">
