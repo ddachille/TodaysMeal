@@ -1,11 +1,23 @@
 #!/usr/local/bin/php
 
+<?php
+	session_start();
+	if($_SESSION['login'] == "t"){
+		$session_username = $_SESSION['username'];
+	}else{
+		$session_username = "f"; 
+	}
+?>
+
 <html>
 	<head><title>New Post Created!</title></head>
 <body>
 
 <?php 
-
+	
+	$username = $session_username;
+	$imgpath = $_SESSION['img'];
+	
 	$db = pg_connect("host=postgres dbname=meal user= js7 password=MealAdminOfDoom123");
 	//connection 
 	if(!$db){
@@ -27,6 +39,14 @@
 	$query3 = "INSERT INTO Post VALUES($arr[0], TRUE, '2014-04-21','$_POST[caption]','$_POST[recipe]', '$_POST[img]')";
 	$result3 = pg_query($db,$query3);
 	
+	$ingredients = $_POST['ingredient'];
+	$amount = $_POST['amount'];
+	$units = $_POST['unit'];
+	
+	$size = size($ingredients);
+	
+	
+		
 	//how to make array queries??? 
 	//ing query INGID AMOUNT UNITS NAME
 	$query4 = "INSERT INTO Ingredient VALUES($arr2[0],'$_POST[amount]','$_POST[units]', '$_POST[name]')";
