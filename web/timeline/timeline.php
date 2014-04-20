@@ -30,9 +30,9 @@
                 </li>
                 <li><a href="search.php">Search</a>
                 </li>
-                <li><a href="homepage.php?login=logout">Logout</a>
-                </li>
                 <li><a href="newPost.php">Post</a>
+                </li>
+                <li><a href="homepage.php?login=logout">Logout</a>
                 </li>
                 <li><a href="#">&nbsp;</a>
                 </li>

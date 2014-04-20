@@ -41,10 +41,10 @@
 			</li>
 			<li><a href="search.php">Search</a>
 			</li>
+			<li><a href="newPost.php">Post</a>
+                     </li>
 			<li><a href="homepage.php?login=logout">Logout</a>
 			</li>
-			<li><a href="newPost.php">Post</a>
-                </li>
 			<li><a href="#">&nbsp;</a>
 			</li>
 			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id dui vitae libero semper placerat id et mauris. Sed fermentum lorem eu fermentum semper. Pellentesque blandit. 
