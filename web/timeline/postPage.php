@@ -104,11 +104,19 @@
 			"SELECT Ingredient.amount, Ingredient.units, Ingredient.name
 				FROM (Stores JOIN Ingredient ON (Ingredient.ingid = Stores.ingid))
 				WHERE Stores.pid=".$pid);
+				
+		$query3 = sprintf(
+			"WITH Commenters AS (SELECT Comment.message, MakeComment.uid
+				FROM (Comment JOIN MakeComment ON (Comment.cid = MakeComment.cid))
+				WHERE MakeComment.pid=".$pid.")
+			SELECT Commenters.message, Users.username FROM (Commenters JOIN Users ON (Users.uid=Commenters.uid))");
 			
 		$result = pg_query($conn, $query);
 		$result2 = pg_query($conn, $query2);
+		$result3 = pg_query($conn, $query3);
 
 		$numOfIngred = pg_num_rows ($result2);
+		$numOfRows = pg_num_rows ($result3);
 
 		if(!$result){
 			echo "An error occured.\n";
@@ -146,6 +154,7 @@
 					echo "</small><br>";
 					echo "Recipe: <small>".$arr[2]."</small>";
 				}
+				
 			?>
 			</p>
             </div>     
@@ -156,6 +165,29 @@
             </div>
           </div>
         </li>
+		<?php
+			//COMMENTS
+			$count = 0;
+			for ($count=0; $count<$numOfRows; $count++){
+				$arr3 = pg_fetch_row($result3, $count);
+				$comment = $arr3[0];
+				$commenter = $arr3[1];
+				echo "<li>";
+				echo "<div class=\"timeline-badge primary\"><a><i class=\"glyphicon glyphicon-record\" rel=\"tooltip\" title=\"11 hours ago via Twitter\" id=\"\"></i></a></div>";
+				echo "<div class=\"timeline-panel\">";
+				
+				echo "<div class=\"timeline-heading\">";
+					//echo "<img class=\"img-responsive\" src=\"".$imgpath."\" />";
+				echo "</div>";
+				echo "<div class=\"timeline-body\">";
+					echo "<a href=timeline.php?username=".$commenter."><b>&nbsp;&nbsp;".$commenter."</b></a>";
+					echo "<p> ".$comment."</p>"; 
+				echo "</div>";
+				echo "</div>";
+				echo "</li>";
+			}
+			//COMMENTS END
+		?>
         
     </ul>
 </div>
