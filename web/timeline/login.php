@@ -27,12 +27,14 @@
 			echo "Authentication success";
 			$_SESSION['username'] = $username;
 			$_SESSION['login'] = $exists;
+			header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
 		}else{
 			echo "Authenticiation failed";
+			$_SESSION['login'] = "f"; 
+			header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/homepage.php?login=failed" ) ;
 		}
 	}else{
-		echo "Checkink _SESSION array";
-		
+		echo "Checking _SESSION array";
 		echo $_SESSION['username'];
 		echo $_SESSION['login'];
 	}
