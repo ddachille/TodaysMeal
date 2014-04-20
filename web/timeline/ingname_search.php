@@ -58,8 +58,8 @@
 				$ingname= ucwords("$ingname");
 				$query = sprintf("SELECT Users.uid, Stores.pid, active, date, caption, recipe, Users.username, imgpath 
 					FROM Ingredient, Stores, Users, Post, MakePost 
-					WHERE name = '$ingname' AND Ingredient.ingid=Stores.ingid AND Stores.pid=Post.pid AND Post.pid=MakePost.pid 
-					AND MakePost.uid=Users.uid;");				
+					WHERE active =true AND name = '$ingname' AND Ingredient.ingid=Stores.ingid AND Stores.pid=Post.pid 
+					AND Post.pid=MakePost.pid AND MakePost.uid=Users.uid;");				
 				$result = pg_query($conn, $query);
 				//Find the number of divs you will need to generate
 				$numOfRows = pg_num_rows ($result);

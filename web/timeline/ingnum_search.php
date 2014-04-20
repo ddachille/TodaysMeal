@@ -57,7 +57,7 @@
 				$ingnum= $_GET['SearchNumIng'];
 				$query = sprintf("SELECT Users.uid, Stores.pid, active, date, caption, recipe, Users.username, imgpath
  					FROM Ingredient, Stores, Users, Post, MakePost
-					WHERE Ingredient.ingid=Stores.ingid AND Stores.pid=Post.pid AND Post.pid=MakePost.pid 
+					WHERE active=true AND Ingredient.ingid=Stores.ingid AND Stores.pid=Post.pid AND Post.pid=MakePost.pid 
 					AND MakePost.uid=Users.uid GROUP BY date, Stores.pid, Users.uid, active, caption, recipe, imgpath 
 					HAVING COUNT(Stores.ingid) = $ingnum;");				
 				$result = pg_query($conn, $query);
