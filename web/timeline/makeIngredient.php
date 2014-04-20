@@ -118,7 +118,7 @@
 					  <form class="form-signin" role="form" action="makePost.php" method="post">
 						<h3 class="form-signin-heading">Input your ingredients! &nbsp;&nbsp;&emsp;</h3>
 						<?php
-						$count = $POST_['ingnum'];
+						$count = $_POST['ingnum'];
 						
 						for($i = 0; $i < $count; $i++){
 							echo "<div class=\"row\">";
