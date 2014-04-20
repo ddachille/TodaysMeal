@@ -32,10 +32,13 @@
                 </li>
                 <li><a href="homepage.php?login=logout">Logout</a>
                 </li>
-                </li>
                 <li><a href="newPage.php">Post</a>
                 </li>
-                <li>RIP Lorum Ipsum
+                <li><a href="#">&nbsp;</a>
+                </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id dui vitae libero semper placerat id et mauris. Sed fermentum lorem eu fermentum semper. Pellentesque blandit. 
+                </li>
+                <li><a href="#"></a>
                 </li>
             </ul>
         </div>
