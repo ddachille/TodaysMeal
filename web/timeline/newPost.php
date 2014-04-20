@@ -112,7 +112,7 @@
 		
 		
 		</head>
-		<?php
+
 			<div class="container">
 				<ul class="timeline" style="padding-left: 0px;">
 					<div class="page-header text-center">
@@ -133,7 +133,7 @@
 
 				</ul>
 			</div> <!-- /container -->
-			?>
+			
 		</div>
     </div>
 </div>

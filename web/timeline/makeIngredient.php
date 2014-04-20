@@ -7,6 +7,10 @@
 	}else{
 		$session_username = "f"; 
 	}
+	
+	$_SESSION['img'] = $_POST['img'];
+	$_SESSION['caption'] = $_POST['caption'];
+	$_SESSION['recipe'] = $_SESSION['recipe'];
 ?>
 
 <!DOCTYPE html>
