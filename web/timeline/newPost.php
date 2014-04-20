@@ -115,28 +115,16 @@
 						<h1 id="timeline"><div id="textbox"><p class="alignleft"><img src="logo/banner1.png"></p><p class="alignright">New Post</p></div></h1>
 						<div style="clear: both;"></div>
 					</div>
-					  <form class="form-signin" role="form" action="makePost.php" method="post">
+					  <form class="form-signin" role="form" action="makeIngredient.php" method="post">
 						<h3 class="form-signin-heading">Create a New Post!&nbsp;&nbsp;&emsp;</h3>
 						<input type="url" class="form-control" placeholder="Image URL" required="" autofocus="" name="img">
 						<input type="text" class="form-control" placeholder="Caption" required="" autofocus="" name="caption">
 						<input type="text" class="form-control" placeholder="Recipe" required="" autofocus="" name="recipe">
 
 						<input type="number" class="form-control" placeholder="Number of Ingredients" required="" autofocus="" name="ingnum">
-						
-						<input type="text" size="12" maxlength="100" name="ingredient[]" placeholder="Ingredient">
-						<input type="number" name="amount[]" placeholder="Amount">
-
-						<select name="measurement[]">
-						<option value="">Measurement</option>
-						<option value="CUP"> CUP</option>
-						<option value="OZ">OZ</option>
-						<option value="scoop">SCOOP</option>
-						<option value="slice">SLICE</option>
-						<option value="TBSP">TBSP</option>
-						<option value="TSP">TSP</option></select>
 						<br/>		
 						
-						<button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+						<button class="btn btn-lg btn-primary btn-block" type="submit">Continue</button>
 					  </form>
 
 				</ul>
