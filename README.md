@@ -7,6 +7,7 @@ TODO:
 -Log-in and showing current logged in user's profile
 -Log out
 -Register + password functions
+-Change to INACTIVE when day ends
 
 DONE:
 Viewing Images
