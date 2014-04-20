@@ -18,7 +18,7 @@
                 </li>
                 <li><a href="search.php">Search</a>
                 </li>
-                <li><a href="#">Logout</a>
+                <li><a href="homepage.php">Logout</a>
                 </li>
                 <li><a href="#">&nbsp;</a>
                 </li>

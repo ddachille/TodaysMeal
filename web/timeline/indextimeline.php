@@ -18,7 +18,7 @@
                 </li>
                 <li><a href="search.php">Search</a>
                 </li>
-                <li><a href="#">Logout</a>
+                <li><a href="homepage.php">Logout</a>
                 </li>
                 <li><a href="#">&nbsp;</a>
                 </li>
@@ -47,7 +47,8 @@
 				$connEstablished = true;
 			}
 			
-			echo "<div align=\"right\"><h1 id=\"timeline\">Dashboard&emsp;&emsp;&emsp;&emsp;&emsp;</h1></div>";
+			echo "<h1 id=\"timeline\"><div id=\"textbox\"><p class=\"alignleft\"><img src=\"logo/banner1.png\"></p><p class=\"alignright\">Dashboard</p>&emsp;&emsp;&emsp;&emsp;&emsp;</div></h1>";
+			echo "<div style=\"clear: both;\"></div>";
 			
 		?>
     </div>

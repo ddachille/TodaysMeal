@@ -62,13 +62,13 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron" style="padding-top:50px">
       <div class="container">
-        <h1>Today's Meal</h1>
+        <h1><img src="logo/banner1.png"></h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id dui vitae libero semper placerat id et mauris. Sed fermentum lorem eu fermentum semper. Pellentesque blandit, lorem at consequat rutrum, magna arcu consectetur massa, at tempor magna purus ut sem. Aliquam sodales laoreet massa nec semper.        
 	 <br><a href="indextimeline.php">secret link to dashboard (for dev purposes)</a></p>
-        <p><a class="btn btn-primary btn-lg" role="button" href="register.php">Register</a></p>
+        <p><a class="btn btn-primary btn-lg" role="button" href="register.php">Sign Up </a></p>
       </div>
       </div>
-      <img src="image\redicecream.jpg" width="33.33333333%"><img src="image\egg.jpg" width="33.33333334%" height="50%"><img src="image\sushi.jpg" width="33.33333333%">
+      <img src="image/redicecream.jpg" width="33.33333333%"><img src="image/egg.jpg" width="33.33333334%" height="50%"><img src="image/sushi.jpg" width="33.33333333%">
     </div><!-- /container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
