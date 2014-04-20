@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="/logo/icon.ico">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Search</title>
+    <title>New Post</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -84,7 +84,7 @@
 
       <form class="form-signin" role="form" action="ingnum_search.php" method="get">
         <h2 class="form-signin-heading">Search by Number of Ingredients:</h2>
-        <input type="number" min="0" class="form-control" placeholder="Number" required autofocus name="SearchNumIng">
+        <input type="text" class="form-control" placeholder="Number" required autofocus name="SearchNumIng">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
       </form>
 
