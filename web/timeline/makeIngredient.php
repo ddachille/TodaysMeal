@@ -127,13 +127,13 @@
 						for($i = 0; $i < $count; $i++){
 							echo "<div class=\"row\">";
   								echo "<div class=\"col-xs-4\">";
-    								echo "<input type=\"text\" class=\"form-control\" name=\"ingredient[]\" placeholder=\"Ingredient\">";
+    								echo "<input type=\"text\" class=\"form-control\" name=\"name[]\" placeholder=\"Ingredient\">";
   								echo "</div>";
   								echo "<div class=\"col-xs-4\">";
     								echo "<input type=\"number\" class=\"form-control\" name=\"amount[]\" placeholder=\"Amount\">";
  								echo "</div>";
   								echo "<div class=\"col-xs-4\">";
-    								echo "<select name=\"measurement[]\">";
+    								echo "<select name=\"units[]\">";
 										echo "<option value=\"\">Measurement</option>";
 										echo "<option value=\"CUP\"> CUP</option>";
 										echo "<option value=\"OZ\">OZ</option>";

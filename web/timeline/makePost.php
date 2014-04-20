@@ -39,9 +39,9 @@
 	$query3 = "INSERT INTO Post VALUES($arr[0], TRUE, '2014-04-21','$_POST[caption]','$_POST[recipe]', '$_POST[img]')";
 	$result3 = pg_query($db,$query3);
 	
-	$ingredients = $_POST['ingredient'];
 	$amount = $_POST['amount'];
-	$units = $_POST['unit'];
+	$units = $_POST['units'];
+	$name = $_POST['name'];
 	
 	$size = size($ingredients);
 	
