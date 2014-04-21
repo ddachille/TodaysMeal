@@ -79,7 +79,8 @@
     <div class="jumbotron" style="padding-top:50px">
       <div class="container">
         <h1><img src="logo/banner1.png"></h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id dui vitae libero semper placerat id et mauris. Sed fermentum lorem eu fermentum semper. Pellentesque blandit, lorem at consequat rutrum, magna arcu consectetur massa, at tempor magna purus ut sem. Aliquam sodales laoreet massa nec semper.        
+        <p>Welcome to Today's Meal! 
+		<br>A fun new way to share your life and passion for food with friends.        
 		<br><a href="indextimeline.php">secret link to dashboard (for dev purposes)</a></p>
         <p><a class="btn btn-primary btn-lg" role="button" href="register.php">Register </a></p>
       </div>
