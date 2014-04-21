@@ -20,6 +20,10 @@
 	$caption = $_SESSION['caption'];
 	$recipe = $_SESSION['recipe'];
 	$imgpath = $_SESSION['img'];
+	$caption = $_SESSION['caption'];
+	$recipe = $_SESSION['recipe'];
+	$uid = $_SESSION['uid'];
+
 	
 	$ingredients = $_POST['name'];
 	$amounts = $_POST['amount'];
@@ -129,25 +133,11 @@
 		$ingid++;
 		
 	}	
-		
-	//how to make array queries??? 
-	//ing query INGID AMOUNT UNITS NAME
-	$query4 = "INSERT INTO Ingredient VALUES($arr2[0],'$_POST[amount]','$_POST[units]', '$_POST[name]')";
-	$result4 = pg_query($db,$query4);
 
-	//update makepost and stores
-	//array query idk UID AND PID
-	$query5 = "INSERT INTO MakePost VALUES($uid, $arr[0])";
-	$result5 = pg_query($db,$query5);
-
-	//array query idk INGID AND PID
-	$query6 = "INSERT INTO Stores VALUES($arr2[0], $arr[0])";
-	$result6= pg_query($db,$query6);
 
 	//redirect to user's timeline?
-	$username = $_POST[username];
-   	//header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
-	
+   	header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
+
 ?>  
 
 </body>
