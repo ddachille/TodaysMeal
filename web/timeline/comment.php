@@ -46,7 +46,7 @@
 
 
 	
-   	header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/homepage.php?login=failed");
+   	header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/postPage.php?pid=".$_SESSION['pid']);
 		
 ?>  
 

@@ -16,11 +16,11 @@
 	$uploaddir = './image/';//<----This is all I changed
 	$uploadfile = $uploaddir.$_FILES['img']['name'];
 
-	echo '<pre>';
+	//echo '<pre>';
 	if (move_uploaded_file($_FILES['img']['tmp_name'], $uploadfile)) {
 		$_SESSION['imgpath'] = $uploadfile;
 	} else {
-		print_r($_FILES);
+		//print_r($_FILES);
 	}
 	
 ?>
