@@ -13,9 +13,7 @@
 	$_SESSION['recipe'] = $_POST['recipe'];
 	
 	//handle the file here
-	if($_FILES["img"]["error"] > 0){
-		 echo "Return Code: " . $_FILES["img"]["error"] . "<br>";
-	}else{
+
 		if (file_exists("image/" . $_FILES["img"]["name"])){
      		 echo $_FILES["img"]["name"] . " already exists. ";
     	}else{
@@ -25,7 +23,7 @@
       	}	
       	
       	$_SESSION['imgpath'] = "image/".$_FILES["img"]["name"];
-	}
+	
 	
 ?>
 
