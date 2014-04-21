@@ -9,9 +9,24 @@
 		header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/homepage.php?login=failedpost");
 	}
 	
-	$_SESSION['img'] = $_POST['img'];
 	$_SESSION['caption'] = $_POST['caption'];
 	$_SESSION['recipe'] = $_POST['recipe'];
+	
+	//handle the file here
+	if($_FILES["img"]["error"] > 0){
+		 echo "Return Code: " . $_FILES["img"]["error"] . "<br>";
+	}else{
+		if (file_exists("image/" . $_FILES["img"]["name"])){
+     		 echo $_FILES["img"]["name"] . " already exists. ";
+    	}else{
+      		move_uploaded_file($_FILES["img"]["tmp_name"],
+      		"image/" . $_FILES["img"]["name"]);
+      		echo "Stored in: " . "image/" . $_FILES["img"]["name"];
+      	}	
+      	
+      	$_SESSION['imgpath'] = "image/".$_FILES["img"]["name"];
+	}
+	
 ?>
 
 <!DOCTYPE html>
@@ -110,6 +125,7 @@
 
 		   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
+		
 		  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 		  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->

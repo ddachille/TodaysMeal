@@ -115,19 +115,22 @@
 
 			<div class="container">
 				<ul class="timeline" style="padding-left: 0px;">
-					<div class="page-header text-center">
+					  <div class="page-header text-center">
 						<h1 id="timeline"><div id="textbox"><p class="alignleft"><img src="logo/banner1.png"></p><p class="alignright">New Post</p></div></h1>
 						<div style="clear: both;"></div>
-					</div>
-					  <form class="form-signin" role="form" action="makeIngredient.php" method="post">
+					  </div>
+					  
+					  <form class="form-signin" role="form" enctype="multipart/form-data" action="makeIngredient.php" method="post">
 						<h3 class="form-signin-heading">Create a New Post!&nbsp;&nbsp;&emsp;</h3>
-						<input type="url" class="form-control" placeholder="Image URL" required="" autofocus="" name="img">
 						<input type="text" class="form-control" placeholder="Caption" required="" autofocus="" name="caption">
 						<input type="text" class="form-control" placeholder="Recipe" required="" autofocus="" name="recipe">
 
 						<input type="number" class="form-control" placeholder="Number of Ingredients" required="" autofocus="" name="ingnum">
 						<br/>		
-						
+						<div class="form-group">
+   						 <label for="img">File input</label>
+   						 <input type="file" name="img" id="img">
+ 					  </div>
 						<button class="btn btn-lg btn-primary btn-block" type="submit">Continue</button>
 					  </form>
 

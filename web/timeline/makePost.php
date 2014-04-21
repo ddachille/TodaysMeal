@@ -19,7 +19,7 @@
 	$username = $session_username;
 	$caption = $_SESSION['caption'];
 	$recipe = $_SESSION['recipe'];
-	$imgpath = $_SESSION['img'];
+	$imgpath = $_SESSION['imgpath'];
 	$caption = $_SESSION['caption'];
 	$recipe = $_SESSION['recipe'];
 	$uid = $_SESSION['uid'];
@@ -83,12 +83,12 @@
 	
 	
 	//Make a query to get the uid for this username
-	$query = "SELECT uid FROM Users WHERE username = '".$username."')";
+	$query = "SELECT uid FROM Users WHERE username = '".$username."'";
 	$result = pg_query($db, $query);
 	$uid = pg_fetch_result($result, 0, 'uid');
 	
 	//Insert uid and pid into MakePost relation
-	$query = "INSERT INTO MakePost VALUES(".$uid$.", ".$pid.")";
+	$query = "INSERT INTO MakePost VALUES(".$uid.", ".$pid.")";
 	$result = pg_query($db, $query);
 	
 	if($result){
@@ -121,7 +121,7 @@
 		}
 		echo "<br>";
 		//Then insert ingid and pid into Stores
-		$query = "INSERT INTO Stores VALUES(".$pid.", ".$ingid.")";
+		$query = "INSERT INTO Stores VALUES(".$ingid.", ".$pid.")";
 		$result = pg_query($db, $query);
 		if($result){
 			echo "Stores inserted.";
@@ -136,7 +136,7 @@
 
 
 	//redirect to user's timeline?
-   	header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
+   	//header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
 
 ?>  
 
