@@ -13,7 +13,9 @@
 	$_SESSION['recipe'] = $_POST['recipe'];
 	
 	//handle the file here
-
+	$temp = explode(".", $_FILES["file"]["name"]);
+	$extension = end($temp);
+	if($_FILES["img"]["error"] > 0){
 		if (file_exists("image/" . $_FILES["img"]["name"])){
      		 echo $_FILES["img"]["name"] . " already exists. ";
     	}else{
@@ -23,7 +25,9 @@
       	}	
       	
       	$_SESSION['imgpath'] = "image/".$_FILES["img"]["name"];
-	
+	}else{
+		echo "Error: ".$_FILES["img"]["error"];
+	}
 	
 ?>
 
