@@ -49,7 +49,7 @@
 	//$_SESSION['login'] = "t";
 	//$_SESSION['username'] = $username;
 	
-   	header( "Location: timeline.php" ) ;
+   	header( "Location: postPage.php?pid=".$_GET['pid']) ;
 
 ?>  
 
