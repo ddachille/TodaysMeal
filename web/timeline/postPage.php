@@ -197,7 +197,7 @@
           <div class="timeline-panel">
             <div class="timeline-body">
 				<?php 
-					echo "<form class=\"form-signin\" role=\"form\" action=\"comment.php?pid=".$pid."\" method=\"POST\">";
+					echo "<form class=\"form-signin\" role=\"form\" action=\"comment.php\" method=\"POST\">";
 				?>
 					<h3 class="form-signin-heading"><div align="right">Comment&emsp;&emsp;</div></h3>
 						<div class="col-xs-12">

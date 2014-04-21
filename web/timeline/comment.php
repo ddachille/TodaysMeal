@@ -36,7 +36,7 @@
 	$arr = pg_fetch_row($result);
 	$arr[0] = $arr[0] +1; 
 
-	$query2 = "INSERT INTO Comment VALUES(".$arr[0].", '".$_POST[comment]."')";
+	$query2 = "INSERT INTO Comment VALUES(".$arr[0].", '".$_POST['comment']."')";
 	$query3 = "INSERT INTO MakeComment VALUES(".$uid.", ".$arr[0].", ".$_SESSION['pid'].")";
 	$result2 = pg_query($db,$query2);
 	$result3 = pg_query($db,$query3);
