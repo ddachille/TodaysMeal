@@ -13,20 +13,16 @@
 	$_SESSION['recipe'] = $_POST['recipe'];
 	
 	//handle the file here
-	$temp = explode(".", $_FILES["file"]["name"]);
-	$extension = end($temp);
-	if($_FILES["img"]["error"] > 0){
-		if (file_exists("image/" . $_FILES["img"]["name"])){
-     		 echo $_FILES["img"]["name"] . " already exists. ";
-    	}else{
-      		move_uploaded_file($_FILES["img"]["tmp_name"],
-      		"image/" . $_FILES["img"]["name"]);
-      		echo "Stored in: " . "image/" . $_FILES["img"]["name"];
-      	}	
-      	
-      	$_SESSION['imgpath'] = "image/".$_FILES["img"]["name"];
-	}else{
-		echo "Error: ".$_FILES["img"]["error"];
+	$uploaddir = './image/';//<----This is all I changed
+	$uploadfile = $uploaddir.$_FILES['img']['name'];
+
+	echo '<pre>';
+	if (move_uploaded_file($_FILES['img']['tmp_name'], $uploadfile)) {
+    	echo "File is valid, and was successfully uploaded.\n";
+	} else {
+    	echo "Possible file upload attack!\n";
+    	echo 'Here is some more debugging info:';
+		print_r($_FILES);
 	}
 	
 ?>
