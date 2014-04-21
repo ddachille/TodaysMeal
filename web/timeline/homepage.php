@@ -83,23 +83,22 @@
 		<br><a href="indextimeline.php">secret link to dashboard (for dev purposes)</a></p>
         <p><a class="btn btn-primary btn-lg" role="button" href="register.php">Register </a></p>
       </div>
-      
-      </div>
-      
-      
-      <img src="image/redicecream.jpg" width="33.33333333%"><img src="image/egg.jpg" width="33.33333334%" height="50%"><img src="image/sushi.jpg" width="33.33333333%">
-		<?php
+      <?php
+		if($_GET['login'] == "logout"){
+    		echo "<div class=\"alert alert-danger\">You have been logged out</div>";
+    	}
     	if($_GET['login'] == "failed"){
     		echo "<div class=\"alert alert-danger\">Login failed, please try again</div>";
-    	}
-    	if($_GET['login'] == "logout"){
-    		echo "<div class=\"alert alert-warning\">You have been logged out</div>";
     	}
     	if($_GET['login'] == "failedpost"){
     		echo "<div class=\"alert alert-danger\">You must log in to make a post</div>";
     	}
     	
-    ?>    
+    ?> 
+      </div>
+      
+      
+      <img src="image/redicecream.jpg" width="33.33333333%"><img src="image/egg.jpg" width="33.33333334%" height="50%"><img src="image/sushi.jpg" width="33.33333333%">   
     </div><!-- /container -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

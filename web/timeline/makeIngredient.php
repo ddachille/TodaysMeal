@@ -11,7 +11,7 @@
 	
 	$_SESSION['img'] = $_POST['img'];
 	$_SESSION['caption'] = $_POST['caption'];
-	$_SESSION['recipe'] = $_SESSION['recipe'];
+	$_SESSION['recipe'] = $_POST['recipe'];
 ?>
 
 <!DOCTYPE html>
@@ -134,15 +134,7 @@
     								echo "<input type=\"number\" class=\"form-control\" name=\"amount[]\" placeholder=\"Amount\">";
  								echo "</div>";
   								echo "<div class=\"col-xs-4\">";
-    								echo "<select name=\"units[]\">";
-										echo "<option value=\"\">Measurement</option>";
-										echo "<option value=\"CUP\"> CUP</option>";
-										echo "<option value=\"OZ\">OZ</option>";
-										echo "<option value=\"scoop\">SCOOP</option>";
-										echo "<option value=\"slice\">SLICE</option>";
-										echo "<option value=\"TBSP\">TBSP</option>";
-										echo "<option value=\"TSP\">TSP</option>";
-									echo "</select>";
+    								echo "<input type=\"text\" class=\"form-control\" name=\"unit[]\" placeholder=\"Unit\">";
 								echo "</div>";
 							echo "</div>";
 							echo "<br>";
