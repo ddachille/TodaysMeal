@@ -189,6 +189,23 @@
 			//COMMENTS END
 		?>
         
+		<li>
+          <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="11 hours ago via Twitter" id=""></i></a></div>
+          <div class="timeline-panel">
+            <div class="timeline-body">
+				<?php 
+					echo "<form class=\"form-signin\" role=\"form\" action=\"comment.php?pid=".$pid."\" method=\"POST\">";
+				?>
+					<h3 class="form-signin-heading"><div align="right">Comment&emsp;&emsp;</div></h3>
+						<div class="col-xs-12">
+							<input type="text" class="form-control" placeholder="Comment" required autofocus name="comment">
+						</div>
+						&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<div class="col-xs-5"><button class="btn btn-lg btn-primary btn-block" type="submit">Post!</button></div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+				 </form>
+            </div>     
+          </div>
+        </li>
+		
     </ul>
 </div>
             </div>
