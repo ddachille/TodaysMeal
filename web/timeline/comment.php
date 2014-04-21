@@ -44,16 +44,10 @@
 	$result2 = pg_query($db,$query2);
 	$result3 = pg_query($db,$query3);
 
-	
-	//redirect
-	//$username =$_POST[username];
-	
-	//session_start();
-	//$_SESSION['login'] = "t";
-	//$_SESSION['username'] = $username;
-	
-   	//header( "Location: postPage.php?pid=".$_SESSION['pid']) ;
 
+	
+   	header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/homepage.php?login=failed");
+		
 ?>  
 
 </body> </html>

@@ -136,7 +136,7 @@
 
 
 	//redirect to user's timeline?
-   	//header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
+   	header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
 
 ?>  
 

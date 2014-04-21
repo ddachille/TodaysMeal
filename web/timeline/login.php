@@ -42,7 +42,7 @@
 			echo "<br>";
 			echo $dbHashedPassword;
 			echo "<br>";
-			//header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
+			header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/timeline.php?username=$username" ) ;
 		}else{
 			echo "Authenticiation failed ";
 			echo "<br>";
@@ -54,7 +54,7 @@
 			echo "<br>"; 
 			echo $result;
 			$_SESSION['login'] = "f";
-			//header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/homepage.php?login=failed");
+			header( "Location: http://cise.ufl.edu/~js7/Pieazza/web/timeline/homepage.php?login=failed");
 		}
 	}else{
 		echo "Checking $_SESSION array ";
