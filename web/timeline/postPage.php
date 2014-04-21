@@ -25,7 +25,7 @@
                 </li>
                 <li>
                 <?php
-                	echo "<a href=\"timeline.php?username=".$session_username."\">My Timeline</a>"
+                	echo "<a href=\"timeline.php?username=".$session_username."\">My Timeline</a>";
                 ?>
                 </li>
                 <li><a href="search.php">Search</a>
@@ -75,6 +75,9 @@
 			echo "An error occured.\n";
 			exit;
 		}
+		
+		//Save that pid in the session
+		$_SESSION['pid'] = $pid;
 		
 		$pidExists = pg_fetch_result($result, 0, "exists");
 		
